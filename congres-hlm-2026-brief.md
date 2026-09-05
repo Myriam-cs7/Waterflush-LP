@@ -1,13 +1,13 @@
-# WaterFlush × Congrès HLM 2026 — Brief créatif & copy de la landing page
+# WaterFlush × 86ᵉ Congrès HLM 2026 — Brief créatif & copy de la landing page
 
-**Objectif de la page :** annoncer la participation de WaterFlush au Congrès HLM / H'Expo 2026 à Bordeaux et convertir les visiteurs professionnels du logement social en rendez-vous pris sur le stand.
+**Objectif de la page :** annoncer la participation de WaterFlush au 86ᵉ Congrès HLM de l'Union sociale pour l'habitat à Bordeaux et convertir les visiteurs professionnels du logement social en rendez-vous pris sur le stand.
 
 **Cible :** organismes HLM, bailleurs sociaux, gestionnaires de patrimoine, décideurs techniques et achats, prescripteurs, architectes, maîtres d'œuvre et professionnels de la construction.
 
 **Ton de voix :** confiant, direct, technique sans être froid — celui d'une entreprise qui a une solution concrète à montrer, pas un discours à vendre. On affirme, on ne surpromet pas.
 
 **Rappel des faits vérifiés (seule source autorisée pour les claims) :**
-- Événement : Congrès HLM / H'Expo 2026
+- Événement : **86ᵉ Congrès HLM de l'Union sociale pour l'habitat** (thème de l'édition : « Habiter 2032. Pour un quinquennat utile. »)
 - Dates : 22, 23 et 24 septembre 2026
 - Lieu : Bordeaux
 - Emplacement : Village des Start-up, sur le stand d'Impulse Partners — Palais 2 l'Atlantique, Stand A15
@@ -17,18 +17,20 @@
 
 Aucune statistique, certification, ou caractéristique produit non listée ci-dessus n'est utilisée dans ce document.
 
+**Sources & limites de cette version :** le fichier « content crawler » fourni liste uniquement les URL du site waterflush.eu, sans texte de page (pas de contenu exploitable) ; l'accès direct au site n'est pas possible depuis cet environnement (restriction réseau du sandbox). Le nom officiel de l'événement, sa thématique et son identité visuelle proviennent du visuel officiel du congrès fourni. Aucune autre information du site WaterFlush (chiffres RSE, libellés exacts de certifications, formulations produit) n'a donc pu être vérifiée pour cette version — si vous pouvez coller le texte des pages clés (accueil, démarche RSE, réservoirs WC, labels & certifications), je réaligne les formulations sur vos textes réels.
+
 ---
 
 ## 1. HERO SECTION
 
 **Headline**
-> WaterFlush au Congrès HLM 2026
+> WaterFlush au 86ᵉ Congrès HLM
 
 **Sous-headline**
 > Venez découvrir la solution sanitaire qui réduit la consommation d'eau de vos logements — du 22 au 24 septembre, à Bordeaux.
 
 **Corps de texte**
-WaterFlush sera présent au Congrès HLM / H'Expo 2026, le rendez-vous des acteurs du logement social. Trois jours pour rencontrer notre équipe, découvrir notre technologie sanitaire et échanger sur les enjeux d'eau et d'entretien de votre patrimoine.
+WaterFlush sera présent au 86ᵉ Congrès HLM de l'Union sociale pour l'habitat, le rendez-vous des acteurs du logement social. Trois jours pour rencontrer notre équipe, découvrir notre technologie sanitaire et échanger sur les enjeux d'eau et d'entretien de votre patrimoine.
 
 **Bloc infos clés (à afficher sous forme de badges/pastilles)**
 - 📅 **22, 23 & 24 septembre 2026**
@@ -41,6 +43,7 @@ WaterFlush sera présent au Congrès HLM / H'Expo 2026, le rendez-vous des acteu
 
 **Direction visuelle recommandée**
 Fond bleu WaterFlush profond (couleur de marque du logo) ou blanc cassé très épuré, avec le logo WaterFlush en haut à gauche. Grand visuel du produit ou d'un détail technique (réservoir, mécanisme) en photo produit soignée, ou une illustration de vague/goutte reprenant le motif du logo, en transparence à droite. Typographie large et affirmée pour la date, traitée comme un « save the date » événementiel. Éviter le générique « salon professionnel » : donner un vrai sentiment de rendez-vous concret (date, lieu, hall).
+En option, un clin d'œil discret à l'identité visuelle officielle du congrès (petites touches d'accent en dégradé — vert, turquoise, rose, orange — sous forme de pastille ou de liseré, sans jamais reprendre le bleu marine du visuel officiel ni concurrencer le bleu de marque WaterFlush) peut signaler visuellement « on y est » sans diluer l'identité WaterFlush.
 
 **Objectif UX**
 Faire comprendre en 3 secondes : qui, quoi, quand, où — et donner une action immédiate (prise de rendez-vous ou ajout au calendrier) avant que le visiteur ne scrolle.
@@ -143,7 +146,7 @@ Donner envie de voir « en vrai » : la page doit donner suffisamment d'informat
 > L'équipe WaterFlush aura le plaisir de vous accueillir au Village des Start-up, sur le stand d'Impulse Partners.
 
 **Corps de texte**
-Pendant les trois jours du Congrès HLM, l'équipe WaterFlush sera présente pour échanger avec vous sur vos projets et vos problématiques de gestion de l'eau et d'entretien du patrimoine. Un moment dédié pour poser vos questions, voir la solution de près et discuter concrètement de son intégration dans vos logements.
+Pendant les trois jours du 86ᵉ Congrès HLM, l'équipe WaterFlush sera présente pour échanger avec vous sur vos projets et vos problématiques de gestion de l'eau et d'entretien du patrimoine. Un moment dédié pour poser vos questions, voir la solution de près et discuter concrètement de son intégration dans vos logements.
 
 **Bloc localisation (mise en avant forte, type « carte de rendez-vous »)**
 > **Palais 2 l'Atlantique — Stand A15**
@@ -202,7 +205,8 @@ Créer un sentiment d'urgence et de clôture : après avoir tout expliqué, la p
 
 | Élément | Valeur utilisée dans toute la page | Statut |
 |---|---|---|
-| Événement | Congrès HLM / H'Expo 2026 | ✅ cohérent partout |
+| Événement | 86ᵉ Congrès HLM de l'Union sociale pour l'habitat | ✅ cohérent partout, nom officiel repris du visuel du congrès |
+| Thème de l'édition | « Habiter 2032. Pour un quinquennat utile. » | ℹ️ mention optionnelle, contextuelle (pas une claim WaterFlush) |
 | Dates | 22, 23 et 24 septembre 2026 | ✅ identiques dans toutes les sections |
 | Ville | Bordeaux | ✅ identique partout |
 | Zone d'exposition | Village des Start-up | ✅ identique partout |
