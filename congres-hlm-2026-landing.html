@@ -97,8 +97,8 @@
   @keyframes scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
   @media (prefers-reduced-motion: reduce){ .marquee-track{ animation-duration:110s; } }
   .marquee-seq{ display:flex; align-items:center; flex:none; }
-  .marquee-item{ display:flex; align-items:center; gap:1.1rem; padding:.9rem 0; font-weight:800; font-size:1rem; color:#fff; white-space:nowrap; }
-  .marquee-sep{ width:20px; height:20px; margin:0 1.3rem; flex:none; }
+  .marquee-item{ display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.6rem; font-weight:800; font-size:1rem; color:#fff; white-space:nowrap; }
+  .marquee-item svg{ width:20px; height:20px; flex:none; }
 
   /* ---------- Section shells ---------- */
   section{ position:relative; }
@@ -171,6 +171,8 @@
     padding:.85rem 1.3rem; font-family:'Nunito', sans-serif; font-size:.95rem;
     background:#fff; color:var(--ink);
   }
+  .catalog-form input[name="prenom"],
+  .catalog-form input[name="nom"]{ flex:1 1 9rem; }
   .catalog-form input::placeholder{ color:#8098A8; }
   .catalog-form input:focus-visible{ outline:none; border-color:var(--blue-mid); box-shadow:0 0 0 4px rgba(45,116,172,.16); }
   .catalog-form button{ flex:0 0 auto; }
@@ -208,40 +210,24 @@
 <div class="marquee" role="marquee" aria-label="Points clés WaterFlush">
   <div class="marquee-track">
     <div class="marquee-seq">
-      <span class="marquee-item">Smart réservoir à bascule</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">50% d'économie d'eau</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Médaille d'Or Concours Lépine</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Fabriqué en France</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">100% recyclé &amp; recyclable</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Sans entretien</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Installation en 10 min</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Garantie 10 ans</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8Z" fill="none" stroke="#fff" stroke-width="1.7"></path><path d="M12 3.2v2.3M12 18.5v2.3M20.8 12h-2.3M5.5 12H3.2M18.1 5.9l-1.6 1.6M7.5 16.5l-1.6 1.6M18.1 18.1l-1.6-1.6M7.5 7.5 5.9 5.9" stroke="#33C7D8" stroke-width="1.7" stroke-linecap="round"></path></svg>Smart réservoir à bascule</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4c3.1 4.1 5 7 5 9.4a5 5 0 1 1-10 0c0-2.4 1.9-5.3 5-9.4Z" fill="#33C7D8" stroke="#fff" stroke-width="1.3"></path></svg>50% d'économie d'eau</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.3 3 6.6 9.4M14.7 3l2.7 6.4" stroke="#F2B705" stroke-width="1.7" stroke-linecap="round"></path><circle cx="12" cy="14.2" r="5.4" fill="#F6C93A" stroke="#B8860B" stroke-width="1.2"></circle><path d="M12 11.6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1-1.5-1.5 2.1-.3.9-1.9Z" fill="#B8860B"></path></svg>Médaille d'Or Concours Lépine</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><g stroke="#0B2338" stroke-width="0.6"><rect x="3.5" y="5.5" width="5.5" height="13" fill="#1C6FB0"></rect><rect x="9" y="5.5" width="5.5" height="13" fill="#fff"></rect><rect x="14.5" y="5.5" width="5.5" height="13" fill="#D0393C"></rect></g></svg>Fabriqué en France</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.3 12.3a7.7 7.7 0 0 1 13-5.9M19.7 11.7a7.7 7.7 0 0 1-13 5.9" stroke="#3DBE7A" stroke-width="1.7" fill="none" stroke-linecap="round"></path><path d="M17.3 3.9v3.6h-3.6M6.7 20.1v-3.6h3.6" stroke="#3DBE7A" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>100% recyclé &amp; recyclable</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l6.5 2.7v4.6c0 4.6-3.1 7.5-6.5 9.3-3.4-1.8-6.5-4.7-6.5-9.3V5.9L12 3.2Z" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"></path><path d="M9 12.3l2 2 4-4.4" stroke="#33C7D8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Sans entretien</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="#fff" stroke-width="1.7"></circle><path d="M12 7.8v4.5l3.1 2" stroke="#33C7D8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Installation en 10 min</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9.4" r="5.2" fill="none" stroke="#fff" stroke-width="1.7"></circle><path d="M9 13.6 7.6 20l4.4-2.5 4.4 2.5-1.4-6.4" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"></path><text x="12" y="11.6" text-anchor="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="5.6" fill="#33C7D8">10</text></svg>Garantie 10 ans</span>
     </div>
     <div class="marquee-seq" aria-hidden="true">
-      <span class="marquee-item">Smart réservoir à bascule</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">50% d'économie d'eau</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Médaille d'Or Concours Lépine</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Fabriqué en France</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">100% recyclé &amp; recyclable</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Sans entretien</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Installation en 10 min</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
-      <span class="marquee-item">Garantie 10 ans</span>
-      <svg class="marquee-sep" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 12c2.5 3 5.5 3 8 0s5.5-3 8 0" fill="none" stroke="#33C7D8" stroke-width="2.4" stroke-linecap="round"></path></svg>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8Z" fill="none" stroke="#fff" stroke-width="1.7"></path><path d="M12 3.2v2.3M12 18.5v2.3M20.8 12h-2.3M5.5 12H3.2M18.1 5.9l-1.6 1.6M7.5 16.5l-1.6 1.6M18.1 18.1l-1.6-1.6M7.5 7.5 5.9 5.9" stroke="#33C7D8" stroke-width="1.7" stroke-linecap="round"></path></svg>Smart réservoir à bascule</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.4c3.1 4.1 5 7 5 9.4a5 5 0 1 1-10 0c0-2.4 1.9-5.3 5-9.4Z" fill="#33C7D8" stroke="#fff" stroke-width="1.3"></path></svg>50% d'économie d'eau</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.3 3 6.6 9.4M14.7 3l2.7 6.4" stroke="#F2B705" stroke-width="1.7" stroke-linecap="round"></path><circle cx="12" cy="14.2" r="5.4" fill="#F6C93A" stroke="#B8860B" stroke-width="1.2"></circle><path d="M12 11.6l.9 1.9 2.1.3-1.5 1.5.4 2.1-1.9-1-1.9 1 .4-2.1-1.5-1.5 2.1-.3.9-1.9Z" fill="#B8860B"></path></svg>Médaille d'Or Concours Lépine</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><g stroke="#0B2338" stroke-width="0.6"><rect x="3.5" y="5.5" width="5.5" height="13" fill="#1C6FB0"></rect><rect x="9" y="5.5" width="5.5" height="13" fill="#fff"></rect><rect x="14.5" y="5.5" width="5.5" height="13" fill="#D0393C"></rect></g></svg>Fabriqué en France</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.3 12.3a7.7 7.7 0 0 1 13-5.9M19.7 11.7a7.7 7.7 0 0 1-13 5.9" stroke="#3DBE7A" stroke-width="1.7" fill="none" stroke-linecap="round"></path><path d="M17.3 3.9v3.6h-3.6M6.7 20.1v-3.6h3.6" stroke="#3DBE7A" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>100% recyclé &amp; recyclable</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l6.5 2.7v4.6c0 4.6-3.1 7.5-6.5 9.3-3.4-1.8-6.5-4.7-6.5-9.3V5.9L12 3.2Z" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"></path><path d="M9 12.3l2 2 4-4.4" stroke="#33C7D8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Sans entretien</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="#fff" stroke-width="1.7"></circle><path d="M12 7.8v4.5l3.1 2" stroke="#33C7D8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Installation en 10 min</span>
+      <span class="marquee-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9.4" r="5.2" fill="none" stroke="#fff" stroke-width="1.7"></circle><path d="M9 13.6 7.6 20l4.4-2.5 4.4 2.5-1.4-6.4" fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"></path><text x="12" y="11.6" text-anchor="middle" font-family="Baloo 2, Nunito, sans-serif" font-weight="800" font-size="5.6" fill="#33C7D8">10</text></svg>Garantie 10 ans</span>
     </div>
   </div>
 </div>
@@ -313,11 +299,13 @@
       <h2>Recevez le catalogue par email</h2>
       <p>Laissez votre email : on vous envoie le nouveau catalogue produits WaterFlush 2026-2027, avant ou après votre passage au Congrès HLM.</p>
       <form class="catalog-form" id="catalog-form">
-        <input type="text" name="organisation" placeholder="Votre organisme (optionnel)" aria-label="Votre organisme" autocomplete="organization">
-        <input type="email" name="email" placeholder="Votre email" aria-label="Votre email" autocomplete="email" required>
+        <input type="text" name="prenom" placeholder="Prénom" aria-label="Prénom" autocomplete="given-name" required>
+        <input type="text" name="nom" placeholder="Nom" aria-label="Nom" autocomplete="family-name" required>
+        <input type="text" name="organisation" placeholder="Organisme / entreprise (optionnel)" aria-label="Organisme ou entreprise" autocomplete="organization">
+        <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
         <button type="submit" class="pill pill-dark">Recevoir le catalogue</button>
       </form>
-      <p class="catalog-note" id="catalog-note">Vos coordonnées servent uniquement à l'envoi du catalogue.</p>
+      <p class="catalog-note" id="catalog-note"></p>
     </div>
   </div>
 </section>
@@ -356,8 +344,9 @@
     if (!form || !note) return;
     form.addEventListener('submit', function(e){
       e.preventDefault();
+      var prenom = form.prenom.value;
       var email = form.email.value;
-      note.textContent = 'Merci ! Le catalogue 2026-2027 va être envoyé à ' + email + '.';
+      note.textContent = 'Merci ' + prenom + ' ! Le catalogue 2026-2027 va être envoyé à ' + email + '.';
       note.classList.add('is-success');
       Array.prototype.forEach.call(form.querySelectorAll('input, button'), function(el){ el.disabled = true; });
     });
