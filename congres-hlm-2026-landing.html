@@ -1,25 +1,19 @@
 <title>WaterFlush au Congrès HLM 2026</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap');
 
   :root{
-    --ink:#0A2138;
-    --ink-2:#102C46;
-    --ink-3:#173C5C;
-    --blue:#155B92;
-    --blue-bright:#3E93D6;
-    --foam:#EEF2F1;
-    --foam-2:#FFFFFF;
-    --brass:#B9803C;
-    --brass-2:#8C5E27;
-    --flow:#4FA9A8;
-    --slate:#4C6478;
-    --foam-text:#DCE7EC;
-    --ink-text:#0F2536;
-    --muted-on-ink:#8FA6B8;
-    --muted-on-foam:#5C7486;
-    --border-ink:rgba(220,231,236,0.16);
-    --border-foam:rgba(15,37,54,0.13);
+    --blue-deep:#153A5B;
+    --blue-mid:#2D74AC;
+    --blue-link:#2E86C6;
+    --turq:#33C7D8;
+    --blue-grad:#1C6FB0;
+    --ink:#181B1E;
+    --surface:#FFFFFF;
+    --tint:#EEF5F7;
+    --tint-2:#E3EFF3;
+    --border:rgba(21,58,91,.14);
+    --muted:#4B6478;
   }
 
   *,*::before,*::after{ box-sizing:border-box; }
@@ -28,11 +22,11 @@
 
   body{
     margin:0;
-    background:var(--ink);
-    color:var(--ink-text);
-    font-family:'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background:var(--surface);
+    color:var(--ink);
+    font-family:'Nunito', ui-sans-serif, system-ui, -apple-system, sans-serif;
     font-size:16px;
-    line-height:1.6;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
 
@@ -40,397 +34,304 @@
   ul{ margin:0; padding:0; list-style:none; }
   p{ margin:0; }
   img,svg{ display:block; max-width:100%; }
-  h1,h2,h3{ margin:0; text-wrap:balance; font-family:'Big Shoulders Display', 'Arial Narrow', sans-serif; text-transform:uppercase; }
+  h1,h2,h3{ margin:0; font-family:'Baloo 2', 'Nunito', sans-serif; font-weight:700; text-wrap:balance; }
 
-  .eyebrow{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.72rem;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-    font-weight:500;
+  .wrap{ max-width:72rem; margin:0 auto; padding-left:clamp(1.25rem,4vw,3rem); padding-right:clamp(1.25rem,4vw,3rem); }
+
+  .pill{
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-family:'Nunito', sans-serif; font-weight:700; font-size:.92rem;
+    text-decoration:none; padding:.85rem 1.6rem; border-radius:999px;
+    border:2px solid transparent; cursor:pointer;
+    transition:transform .15s ease, background-color .15s ease, border-color .15s ease;
   }
+  .pill:hover{ transform:translateY(-1px); }
+  .pill:focus-visible{ outline:3px solid var(--turq); outline-offset:2px; }
+  .pill-dark{ background:var(--blue-deep); color:#fff; }
+  .pill-dark:hover{ background:#0E2D48; }
+  .pill-light{ background:#EDEFF1; color:var(--blue-deep); }
+  .pill-light:hover{ background:#E0E3E6; }
+  .pill-outline-onblue{ border-color:rgba(255,255,255,.6); color:#fff; }
+  .pill-outline-onblue:hover{ background:rgba(255,255,255,.14); border-color:#fff; }
+  .pill-outline{ border-color:var(--border); color:var(--blue-deep); }
+  .pill-outline:hover{ border-color:var(--blue-mid); background:var(--tint); }
 
-  .wrap{ max-width:74rem; margin:0 auto; padding-left:clamp(1.25rem,4vw,3rem); padding-right:clamp(1.25rem,4vw,3rem); }
-
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:.5rem;
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.82rem;
-    font-weight:500;
-    letter-spacing:.03em;
-    text-decoration:none;
-    padding:.85rem 1.4rem;
-    border-radius:2px;
-    border:1px solid transparent;
-    cursor:pointer;
-    transition:background-color .15s ease, color .15s ease, border-color .15s ease;
+  .badge{
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-weight:700; font-size:.86rem; color:var(--blue-deep);
+    background:var(--tint); border-radius:999px; padding:.5rem 1rem;
   }
-  .btn:focus-visible{ outline:2px solid var(--flow); outline-offset:2px; }
-  .btn-primary{ background:var(--brass); color:#1A1204; }
-  .btn-primary:hover{ background:#CB8E48; }
-  .btn-ghost-onink{ border-color:var(--border-ink); color:var(--foam-text); }
-  .btn-ghost-onink:hover{ border-color:var(--muted-on-ink); background:rgba(255,255,255,.04); }
-  .btn-ghost-onfoam{ border-color:var(--border-foam); color:var(--ink-text); }
-  .btn-ghost-onfoam:hover{ border-color:var(--slate); background:rgba(15,37,54,.04); }
+  .badge .dot{ width:7px; height:7px; border-radius:50%; background:var(--turq); flex:none; }
+  .badge-onblue{ background:rgba(255,255,255,.16); color:#fff; }
+  .badge-onblue .dot{ background:#fff; }
 
   /* ---------- Top bar ---------- */
-  .topbar{
-    position:sticky; top:0; z-index:20;
-    background:var(--ink);
-    border-bottom:1px solid var(--border-ink);
-  }
-  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-top:.7rem; padding-bottom:.7rem; }
-  .logotype{ display:flex; align-items:baseline; gap:.35rem; font-family:'Big Shoulders Display', sans-serif; font-weight:800; font-size:1.15rem; text-transform:uppercase; letter-spacing:.01em; color:var(--foam-2); white-space:nowrap; }
-  .logotype .mark{ color:var(--flow); }
-  .topbar-right{ display:flex; align-items:center; gap:1rem; }
-  .countdown{ font-family:'IBM Plex Mono', monospace; font-size:.78rem; color:var(--muted-on-ink); white-space:nowrap; }
-  .countdown strong{ color:var(--foam-text); font-weight:500; }
-  .topbar-cta{ font-family:'IBM Plex Mono', monospace; font-size:.76rem; color:var(--flow); text-decoration:none; border:1px solid var(--border-ink); padding:.45rem .8rem; border-radius:2px; white-space:nowrap; }
-  .topbar-cta:hover{ border-color:var(--flow); }
-  @media (max-width:640px){ .countdown{ display:none; } }
+  .topbar{ background:#fff; border-bottom:1px solid var(--border); }
+  .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-top:.9rem; padding-bottom:.9rem; }
+  .logo{ display:flex; align-items:center; gap:.4rem; text-decoration:none; }
+  .logo-word{ font-family:'Baloo 2', sans-serif; font-weight:800; font-size:1.5rem; color:var(--blue-mid); }
+  .logo-word b{ color:var(--blue-deep); font-weight:800; }
+  .logo-mark{ width:30px; height:30px; }
+  .topbar-tag{ font-weight:700; color:var(--muted); font-size:.9rem; }
+  @media (max-width:640px){ .topbar-tag{ display:none; } }
 
   /* ---------- Hero ---------- */
-  .hero{ background:var(--ink); color:var(--foam-text); position:relative; overflow:hidden; padding-top:clamp(3rem,7vw,5.5rem); padding-bottom:clamp(3rem,6vw,4.5rem); }
-  .hero .wrap{ display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
-  @media (max-width:920px){ .hero .wrap{ grid-template-columns:1fr; } }
+  .hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(100deg, var(--turq) 0%, var(--blue-grad) 62%, var(--blue-deep) 100%);
+    color:#fff;
+    padding-top:clamp(3rem,6vw,4.5rem); padding-bottom:clamp(3.5rem,7vw,5rem);
+  }
+  .hero .wrap{ display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(2rem,5vw,3.5rem); align-items:center; }
+  @media (max-width:900px){ .hero .wrap{ grid-template-columns:1fr; } }
 
-  .hero-eyebrow{ color:var(--flow); margin-bottom:1.1rem; }
-  .hero h1{ font-size:clamp(2.6rem,5.6vw,4.6rem); line-height:.94; font-weight:800; letter-spacing:-.01em; }
-  .hero h1 em{ font-style:normal; color:var(--blue-bright); }
-  .lede{ margin-top:1.35rem; max-width:34em; font-size:clamp(1.05rem,1.6vw,1.2rem); color:var(--foam-text); }
-  .lede b{ color:#fff; font-weight:600; }
+  .hero-eyebrow{ font-weight:800; letter-spacing:.02em; color:#fff; opacity:.9; font-size:.95rem; text-transform:uppercase; }
+  .hero h1{ font-size:clamp(2.3rem,5vw,3.6rem); line-height:1.05; margin-top:.7rem; color:#fff; }
+  .hero .lede{ margin-top:1.1rem; max-width:32em; font-size:clamp(1.05rem,1.4vw,1.18rem); font-weight:600; color:#F2FAFC; }
+  .hero-badges{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.6rem; }
+  .hero-cta{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:1.9rem; align-items:center; }
+  .hero-note{ margin-top:1rem; font-weight:700; font-size:.92rem; color:#fff; opacity:.92; }
 
-  .hero-meta{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.75rem; }
-  .badge{ font-family:'IBM Plex Mono', monospace; font-size:.78rem; letter-spacing:.03em; border:1px solid var(--border-ink); color:var(--foam-text); padding:.5rem .8rem; border-radius:2px; display:flex; align-items:center; gap:.45rem; }
-  .badge .dot{ width:6px; height:6px; border-radius:50%; background:var(--flow); flex:none; }
-
-  .hero-cta{ display:flex; flex-wrap:wrap; gap:.85rem; margin-top:2rem; }
-
-  .gauge-panel{ position:relative; }
-  .gauge-card{ background:var(--ink-2); border:1px solid var(--border-ink); border-radius:4px; padding:1.6rem 1.6rem 1.4rem; }
-  .gauge-card-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:1rem; }
-  .gauge-card-head .eyebrow{ color:var(--muted-on-ink); }
-  .gauge-stat{ font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:2.6rem; color:var(--brass); line-height:1; }
-  .gauge-svg-row{ display:flex; align-items:flex-end; gap:1.4rem; }
-  .gauge-caption{ font-family:'IBM Plex Mono', monospace; font-size:.78rem; color:var(--muted-on-ink); line-height:1.6; }
-  .gauge-caption b{ color:var(--foam-text); font-weight:500; }
-
-  .wave-seam{ display:block; width:100%; height:auto; margin-bottom:-1px; }
+  .hero-stamp{ display:flex; justify-content:center; }
+  .stamp-card{
+    background:#fff; border-radius:22px; padding:1.6rem 1.4rem;
+    transform:rotate(-3deg);
+    box-shadow:0 18px 40px rgba(10,35,58,.25);
+    width:min(19rem, 100%);
+  }
+  .stamp-inner{ transform:rotate(3deg); text-align:center; }
+  .stamp-inner .eyebrow{ font-weight:800; color:var(--blue-mid); font-size:.8rem; letter-spacing:.04em; text-transform:uppercase; }
+  .stamp-days{ font-family:'Baloo 2', sans-serif; font-weight:800; font-size:3.2rem; color:var(--blue-deep); line-height:1; margin-top:.4rem; }
+  .stamp-days span{ font-size:1.1rem; color:var(--muted); font-weight:700; }
+  .stamp-inner .place{ margin-top:.6rem; font-weight:700; color:var(--muted); font-size:.92rem; }
 
   /* ---------- Marquee ---------- */
-  .marquee{ background:var(--blue); overflow:hidden; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(0,0,0,.12); }
-  .marquee-track{ display:flex; width:max-content; animation:scroll 32s linear infinite; }
+  .marquee{ background:var(--blue-deep); overflow:hidden; }
+  .marquee-track{ display:flex; width:max-content; animation:scroll 30s linear infinite; }
   @keyframes scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce){ .marquee-track{ animation-duration:120s; } }
+  @media (prefers-reduced-motion: reduce){ .marquee-track{ animation-duration:110s; } }
   .marquee-seq{ display:flex; align-items:center; flex:none; }
-  .marquee-item{ display:flex; align-items:center; gap:1.1rem; padding:.95rem 1.4rem; font-family:'IBM Plex Mono', monospace; font-size:.92rem; font-weight:500; color:#fff; letter-spacing:.02em; white-space:nowrap; }
-  .marquee-item .tick{ width:1px; height:1.1rem; background:rgba(255,255,255,.35); }
-  .marquee-item strong{ color:var(--brass); font-weight:600; }
+  .marquee-item{ display:flex; align-items:center; gap:1.1rem; padding:.9rem 1.3rem; font-weight:800; font-size:1rem; color:#fff; white-space:nowrap; }
+  .marquee-item::after{ content:'•'; color:var(--turq); margin-left:1.1rem; }
 
   /* ---------- Section shells ---------- */
   section{ position:relative; }
-  .section-pad{ padding-top:clamp(3.5rem,7vw,5.5rem); padding-bottom:clamp(3.5rem,7vw,5.5rem); }
-  .on-foam{ background:var(--foam); color:var(--ink-text); }
-  .on-ink{ background:var(--ink); color:var(--foam-text); }
+  .section-pad{ padding-top:clamp(3.2rem,6.5vw,5rem); padding-bottom:clamp(3.2rem,6.5vw,5rem); }
+  .center{ text-align:center; }
 
-  .section-head{ max-width:40rem; margin-bottom:clamp(2rem,4vw,3rem); }
-  .section-head .eyebrow{ margin-bottom:.8rem; display:block; }
-  .on-foam .section-head .eyebrow{ color:var(--blue); }
-  .on-ink .section-head .eyebrow{ color:var(--flow); }
-  .section-head h2{ font-size:clamp(1.9rem,3.4vw,2.7rem); line-height:1.04; font-weight:700; }
-  .section-head p{ margin-top:1rem; font-size:1.05rem; max-width:36em; }
-  .on-foam .section-head p{ color:var(--muted-on-foam); }
-  .on-ink .section-head p{ color:var(--muted-on-ink); }
+  .section-head{ max-width:44rem; margin:0 auto clamp(2rem,4vw,3rem); }
+  .section-head .eyebrow{ display:block; font-weight:800; color:var(--turq-text, var(--blue-mid)); text-transform:uppercase; letter-spacing:.03em; font-size:.9rem; margin-bottom:.6rem; }
+  .section-head h2{ font-size:clamp(1.9rem,3.6vw,2.6rem); color:var(--blue-deep); line-height:1.1; }
+  .section-head p{ margin-top:1.1rem; font-size:1.08rem; color:var(--ink); }
 
-  /* ---------- Compare panel ---------- */
-  .compare-panel{ display:grid; grid-template-columns:1fr auto 1fr; gap:0; border:1px solid var(--border-foam); border-radius:4px; overflow:hidden; background:var(--foam-2); margin-bottom:clamp(2.5rem,5vw,3.5rem); }
-  @media (max-width:760px){ .compare-panel{ grid-template-columns:1fr; } .compare-divider{ display:none; } }
-  .compare-col{ padding:1.8rem clamp(1.4rem,3vw,2.2rem); }
-  .compare-col h3{ font-size:1.15rem; margin-bottom:1.1rem; letter-spacing:.01em; }
-  .compare-col.traditional{ color:var(--slate); }
-  .compare-col.traditional h3{ color:var(--slate); }
-  .compare-col.waterflush{ background:var(--ink); color:var(--foam-text); }
-  .compare-col.waterflush h3{ color:var(--flow); }
-  .compare-col li{ display:flex; gap:.65rem; padding:.5rem 0; font-size:.98rem; border-top:1px solid var(--border-foam); }
-  .compare-col.waterflush li{ border-top:1px solid var(--border-ink); }
-  .compare-col li:first-child{ border-top:none; }
-  .compare-col li::before{ content:'—'; flex:none; opacity:.6; font-family:'IBM Plex Mono',monospace; }
-  .compare-col.waterflush li::before{ content:'✓'; color:var(--flow); opacity:1; font-family:'IBM Plex Mono',monospace; }
-  .compare-divider{ display:flex; align-items:center; justify-content:center; background:var(--foam); font-family:'IBM Plex Mono',monospace; color:var(--slate); font-size:1.1rem; padding:0 .4rem; }
+  /* ---------- Benefits (image-grid style) ---------- */
+  .benefits{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:start; }
+  @media (max-width:880px){ .benefits{ grid-template-columns:1fr; } }
 
-  /* ---------- Benefit grid ---------- */
-  .benefit-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border-foam); border:1px solid var(--border-foam); border-radius:4px; overflow:hidden; }
-  @media (max-width:900px){ .benefit-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:520px){ .benefit-grid{ grid-template-columns:1fr; } }
-  .benefit{ background:var(--foam-2); padding:1.6rem 1.4rem; }
-  .benefit .num{ font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--brass); letter-spacing:.06em; }
-  .benefit h3{ font-size:1.05rem; margin-top:.6rem; text-transform:none; font-family:'IBM Plex Sans',sans-serif; font-weight:600; }
-  .benefit p{ margin-top:.5rem; font-size:.92rem; color:var(--muted-on-foam); }
+  .icon-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .icon-tile{ background:var(--tint); border-radius:18px; padding:1.5rem 1.1rem; display:flex; flex-direction:column; align-items:flex-start; gap:.7rem; }
+  .icon-tile svg{ width:34px; height:34px; }
+  .icon-tile .t{ font-weight:800; color:var(--blue-deep); font-size:1rem; }
+  .icon-tile .d{ font-size:.86rem; color:var(--muted); line-height:1.45; }
 
-  /* ---------- Product spec row ---------- */
-  .spec-row{ display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border-foam); border:1px solid var(--border-foam); border-radius:4px; overflow:hidden; margin-bottom:clamp(2rem,4vw,2.6rem); }
-  @media (max-width:920px){ .spec-row{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:520px){ .spec-row{ grid-template-columns:1fr; } }
-  .spec{ background:var(--foam-2); padding:1.5rem 1.2rem; display:flex; flex-direction:column; gap:.5rem; }
-  .spec .label{ font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.1em; color:var(--slate); text-transform:uppercase; }
-  .spec .stat{ font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:1.7rem; color:var(--blue); font-variant-numeric:tabular-nums; }
-  .spec .desc{ font-size:.86rem; color:var(--muted-on-foam); line-height:1.5; }
+  .benefits-text h3{ color:var(--blue-mid); font-size:1.15rem; margin-bottom:.9rem; }
+  .benefits-text ul li{ position:relative; padding-left:1.3rem; margin-bottom:.55rem; font-size:1rem; }
+  .benefits-text ul li::before{ content:'•'; position:absolute; left:0; color:var(--blue-mid); font-weight:800; }
+  .benefits-text .block{ margin-top:1.6rem; }
+  .benefits-text .block h4{ font-family:'Baloo 2', sans-serif; font-weight:700; color:var(--blue-mid); font-size:1.05rem; margin-bottom:.4rem; }
+  .benefits-text .block p{ color:var(--ink); font-size:.98rem; }
 
-  .badge-row{ display:flex; flex-wrap:wrap; gap:1rem; align-items:stretch; margin-bottom:clamp(2rem,4vw,2.6rem); }
-  .guarantee-badge{ display:flex; align-items:center; gap:1rem; background:var(--ink); color:#fff; border-radius:4px; padding:1.1rem 1.4rem; flex:1 1 15rem; }
-  .guarantee-badge .num{ font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:2.1rem; color:var(--brass); line-height:1; }
-  .guarantee-badge .txt{ font-size:.88rem; color:var(--muted-on-ink); }
-  .guarantee-badge .txt b{ color:#fff; display:block; font-family:'IBM Plex Mono',monospace; letter-spacing:.03em; font-size:.8rem; margin-bottom:.15rem; }
-  .innovation-badge{ flex:2 1 22rem; border:1px solid var(--border-foam); border-radius:4px; padding:1.1rem 1.4rem; font-size:.92rem; color:var(--muted-on-foam); display:flex; align-items:center; }
-  .innovation-badge b{ color:var(--ink-text); font-weight:600; }
+  .guarantee-strip{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:2rem; }
+  .guarantee-chip{ display:flex; align-items:center; gap:.9rem; background:var(--blue-deep); color:#fff; border-radius:18px; padding:1rem 1.3rem; flex:1 1 14rem; }
+  .guarantee-chip .num{ font-family:'Baloo 2', sans-serif; font-weight:800; font-size:2rem; color:var(--turq); line-height:1; }
+  .guarantee-chip .txt{ font-size:.86rem; font-weight:600; opacity:.9; }
+  .award-chip{ flex:2 1 20rem; border:2px solid var(--border); border-radius:18px; padding:1rem 1.3rem; display:flex; align-items:center; font-size:.92rem; color:var(--muted); }
+  .award-chip b{ color:var(--blue-deep); }
 
-  /* ---------- Meet section ---------- */
-  .meet{ background:var(--ink); color:var(--foam-text); }
-  .meet-card{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,3.5rem); align-items:center; }
-  @media (max-width:880px){ .meet-card{ grid-template-columns:1fr; } }
-  .meet-quote{ font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:clamp(1.5rem,2.6vw,2.1rem); line-height:1.15; text-transform:none; color:#fff; }
-  .meet-body{ margin-top:1.2rem; color:var(--muted-on-ink); max-width:32em; }
-  .meet-location{ margin-top:1.8rem; border-left:2px solid var(--brass); padding-left:1.1rem; }
-  .meet-location .stand{ font-family:'Big Shoulders Display',sans-serif; font-weight:800; font-size:clamp(1.5rem,2.6vw,2rem); color:#fff; text-transform:uppercase; line-height:1.05; }
-  .meet-location .sub{ font-family:'IBM Plex Mono',monospace; font-size:.85rem; color:var(--flow); margin-top:.4rem; }
-  .meet-location .dates{ font-family:'IBM Plex Mono',monospace; font-size:.8rem; color:var(--muted-on-ink); margin-top:.3rem; }
-  .meet-cta{ display:flex; flex-wrap:wrap; gap:.85rem; margin-top:1.9rem; }
+  /* ---------- Meet section (open / free-access framing) ---------- */
+  .meet{ background:var(--tint); }
+  .meet-panel{ background:#fff; border-radius:28px; padding:clamp(2rem,4vw,3rem); display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,4vw,3rem); align-items:center; box-shadow:0 12px 34px rgba(21,58,91,.08); }
+  @media (max-width:880px){ .meet-panel{ grid-template-columns:1fr; } }
 
-  .floorplan-wrap{ position:relative; }
-  .floorplan-caption{ font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--muted-on-ink); text-align:right; margin-top:.5rem; letter-spacing:.02em; }
+  .free-access{ display:inline-flex; align-items:center; gap:.55rem; background:#E7F8F4; color:#127763; font-weight:800; font-size:.86rem; border-radius:999px; padding:.5rem 1rem; margin-bottom:1.1rem; }
+  .free-access .dot{ width:7px; height:7px; border-radius:50%; background:#22B893; }
+
+  .meet-quote{ font-family:'Baloo 2', sans-serif; font-weight:700; font-size:clamp(1.3rem,2.2vw,1.7rem); color:var(--blue-deep); line-height:1.25; }
+  .meet-body{ margin-top:1rem; color:var(--ink); max-width:34em; }
+  .meet-badges{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.4rem; }
+
+  .plan-wrap{ background:var(--tint); border-radius:20px; padding:1.1rem; }
+  .plan-caption{ font-size:.74rem; color:var(--muted); text-align:right; margin-top:.5rem; font-weight:700; }
 
   /* ---------- Final CTA ---------- */
-  .final{ background:var(--blue); color:#fff; text-align:center; }
-  .final .eyebrow{ color:#D9ECFB; }
-  .final h2{ font-size:clamp(2.4rem,6vw,4.2rem); font-weight:800; line-height:.95; margin-top:1rem; }
-  .final .lede{ margin:1.3rem auto 0; color:#E4F1FC; text-align:center; }
-  .final .recap{ font-family:'IBM Plex Mono',monospace; font-size:.86rem; color:#D9ECFB; margin-top:1.6rem; letter-spacing:.02em; }
-  .final .hero-cta{ justify-content:center; margin-top:2.1rem; }
-  .final .btn-primary{ background:var(--ink); color:#fff; }
-  .final .btn-primary:hover{ background:#173C5C; }
-  .final .btn-ghost-onink{ border-color:rgba(255,255,255,.4); color:#fff; }
-  .final .btn-ghost-onink:hover{ border-color:#fff; background:rgba(255,255,255,.08); }
+  .final{
+    background:linear-gradient(100deg, var(--blue-deep) 0%, var(--blue-grad) 55%, var(--turq) 100%);
+    color:#fff; text-align:center;
+  }
+  .final .eyebrow{ font-weight:800; letter-spacing:.03em; text-transform:uppercase; font-size:.92rem; opacity:.9; }
+  .final h2{ color:#fff; font-size:clamp(2.2rem,5.5vw,3.6rem); margin-top:.9rem; }
+  .final .lede{ margin:1.1rem auto 0; max-width:34em; font-weight:600; color:#F2FAFC; font-size:1.08rem; }
+  .final .hero-badges{ justify-content:center; margin-top:1.5rem; }
+  .final .hero-cta{ justify-content:center; margin-top:1.9rem; }
 
-  .foot{ background:var(--ink); padding:1.6rem clamp(1.25rem,4vw,3rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.6rem; border-top:1px solid var(--border-ink); }
-  .foot .logotype{ font-size:.95rem; }
-  .foot small{ font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--muted-on-ink); }
+  .foot{ background:#fff; padding:1.6rem clamp(1.25rem,4vw,3rem); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.6rem; border-top:1px solid var(--border); }
+  .foot small{ font-weight:700; color:var(--muted); font-size:.82rem; }
 </style>
 
-<div class="topbar" id="top">
+<div class="topbar">
   <div class="wrap">
-    <span class="logotype">Water<span class="mark">Flush</span></span>
-    <div class="topbar-right">
-      <span class="countdown" id="countdown" aria-live="off">Bordeaux dans <strong id="countdown-value">—</strong></span>
-      <a class="topbar-cta" href="#meet">Stand A15 →</a>
-    </div>
+    <a class="logo" href="#top" aria-label="WaterFlush">
+      <span class="logo-word">Water<b>Flush</b></span>
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M6 20a14 14 0 0 1 24-9" fill="none" stroke="#2D74AC" stroke-width="3.4" stroke-linecap="round"></path>
+        <path d="M10 26a10 10 0 0 0 18-6" fill="none" stroke="#33C7D8" stroke-width="3.4" stroke-linecap="round"></path>
+        <path d="M14 31a6 6 0 0 0 11-3" fill="none" stroke="#153A5B" stroke-width="3.4" stroke-linecap="round"></path>
+      </svg>
+    </a>
+    <span class="topbar-tag" id="top">86ᵉ Congrès HLM · 22–24 sept. 2026 · Bordeaux</span>
   </div>
 </div>
 
 <header class="hero">
   <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow hero-eyebrow">86ᵉ Congrès HLM · Union sociale pour l'habitat</span>
-      <h1>WaterFlush<br>au <em>Congrès HLM</em></h1>
-      <p class="lede">-40% d'eau, sans entretien, garanti 10 ans, fabriqué en France. <b>Venez voir la solution en vrai</b> — du 22 au 24 septembre, à Bordeaux.</p>
-      <div class="hero-meta">
-        <span class="badge"><span class="dot"></span>22–24 sept. 2026</span>
-        <span class="badge"><span class="dot"></span>Bordeaux</span>
-        <span class="badge"><span class="dot"></span>Village des Start-up</span>
+    <div>
+      <span class="hero-eyebrow">86ᵉ Congrès HLM — Union sociale pour l'habitat</span>
+      <h1>WaterFlush sera à Bordeaux</h1>
+      <p class="lede">−40% d'eau, sans entretien, garanti 10 ans, fabriqué en France. Venez découvrir le réservoir WaterFlush au Village des Start-up.</p>
+      <div class="hero-badges">
+        <span class="badge badge-onblue"><span class="dot"></span>22–23–24 septembre 2026</span>
+        <span class="badge badge-onblue"><span class="dot"></span>Bordeaux</span>
+        <span class="badge badge-onblue"><span class="dot"></span>Village des Start-up</span>
       </div>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#meet">Prendre rendez-vous sur le stand</a>
-        <a class="btn btn-ghost-onink" href="#meet">Voir notre emplacement</a>
+        <a class="pill pill-light" href="#meet">Voir où nous trouver</a>
       </div>
+      <p class="hero-note">Accès libre, sans rendez-vous — venez quand vous voulez !</p>
     </div>
 
-    <div class="gauge-panel">
-      <div class="gauge-card">
-        <div class="gauge-card-head">
-          <span class="eyebrow">Baquet à bascule</span>
-          <span class="gauge-stat">−40%</span>
-        </div>
-        <div class="gauge-svg-row">
-          <svg viewBox="0 0 120 200" width="92" height="184" role="img" aria-label="Jauge du réservoir, réglable de 2 à 6 litres">
-            <rect x="30" y="10" width="60" height="170" rx="10" fill="none" stroke="#3B5B76" stroke-width="2"></rect>
-            <rect x="34" y="66" width="52" height="110" rx="6" fill="#3E93D6" opacity="0.85"></rect>
-            <line x1="18" y1="176" x2="30" y2="176" stroke="#8FA6B8" stroke-width="1.5"></line>
-            <line x1="18" y1="140" x2="30" y2="140" stroke="#8FA6B8" stroke-width="1.5"></line>
-            <line x1="18" y1="103" x2="30" y2="103" stroke="#8FA6B8" stroke-width="1.5"></line>
-            <line x1="18" y1="66" x2="30" y2="66" stroke="#B9803C" stroke-width="2"></line>
-            <line x1="18" y1="30" x2="30" y2="30" stroke="#8FA6B8" stroke-width="1.5"></line>
-            <text x="8" y="180" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8FA6B8">0L</text>
-            <text x="4" y="70" font-family="IBM Plex Mono, monospace" font-size="9" fill="#B9803C">2L</text>
-            <text x="4" y="34" font-family="IBM Plex Mono, monospace" font-size="9" fill="#8FA6B8">6L</text>
-          </svg>
-          <p class="gauge-caption">Système breveté <b>réglable de 2 à 6 litres</b> selon le besoin — livré pré-monté, installé en <b>moins de 10 minutes</b>, sur tout type de cuvette.</p>
+    <div class="hero-stamp">
+      <div class="stamp-card">
+        <div class="stamp-inner">
+          <span class="eyebrow">Rendez-vous à Bordeaux</span>
+          <div class="stamp-days" id="stamp-days">—<span> j</span></div>
+          <div class="place">avant le Congrès HLM</div>
         </div>
       </div>
     </div>
   </div>
-
-  <svg class="wave-seam" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,32 C 240,55 480,10 720,28 C 960,46 1200,14 1440,30 L1440,60 L0,60 Z" fill="#155B92"></path>
-  </svg>
 </header>
 
 <div class="marquee" role="marquee" aria-label="Points clés WaterFlush">
   <div class="marquee-track">
     <div class="marquee-seq">
-      <span class="marquee-item"><strong>−40%</strong> d'eau <span class="tick"></span></span>
-      <span class="marquee-item">Fabriqué en France <span class="tick"></span></span>
-      <span class="marquee-item">100% recyclé &amp; recyclable <span class="tick"></span></span>
-      <span class="marquee-item">Sans entretien <span class="tick"></span></span>
-      <span class="marquee-item">Installation en <strong>10 min</strong> <span class="tick"></span></span>
-      <span class="marquee-item">Garantie <strong>10 ans</strong> <span class="tick"></span></span>
+      <span class="marquee-item">−40% d'eau</span>
+      <span class="marquee-item">Fabriqué en France</span>
+      <span class="marquee-item">100% recyclé &amp; recyclable</span>
+      <span class="marquee-item">Sans entretien</span>
+      <span class="marquee-item">Installation en 10 min</span>
+      <span class="marquee-item">Garantie 10 ans</span>
     </div>
     <div class="marquee-seq" aria-hidden="true">
-      <span class="marquee-item"><strong>−40%</strong> d'eau <span class="tick"></span></span>
-      <span class="marquee-item">Fabriqué en France <span class="tick"></span></span>
-      <span class="marquee-item">100% recyclé &amp; recyclable <span class="tick"></span></span>
-      <span class="marquee-item">Sans entretien <span class="tick"></span></span>
-      <span class="marquee-item">Installation en <strong>10 min</strong> <span class="tick"></span></span>
-      <span class="marquee-item">Garantie <strong>10 ans</strong> <span class="tick"></span></span>
+      <span class="marquee-item">−40% d'eau</span>
+      <span class="marquee-item">Fabriqué en France</span>
+      <span class="marquee-item">100% recyclé &amp; recyclable</span>
+      <span class="marquee-item">Sans entretien</span>
+      <span class="marquee-item">Installation en 10 min</span>
+      <span class="marquee-item">Garantie 10 ans</span>
     </div>
   </div>
 </div>
 
-<section class="why on-foam section-pad">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Pourquoi WaterFlush</span>
-      <h2>Une solution pensée pour les réalités du logement social</h2>
-      <p>Parc important, budgets d'entretien contraints, objectifs de sobriété toujours plus exigeants : WaterFlush répond directement à ces enjeux, avec des preuves plutôt que des promesses.</p>
-    </div>
-
-    <div class="compare-panel">
-      <div class="compare-col traditional">
-        <h3>Mécanisme traditionnel</h3>
-        <ul>
-          <li>Joint de cloche exposé à l'entartrage</li>
-          <li>Interventions de maintenance récurrentes</li>
-          <li>Volume de chasse fixe, non ajustable</li>
-        </ul>
-      </div>
-      <div class="compare-divider">→</div>
-      <div class="compare-col waterflush">
-        <h3>Réservoir WaterFlush</h3>
-        <ul>
-          <li>Système breveté sans joint de cloche</li>
-          <li>−40% d'eau, sans entretien, garanti 10 ans</li>
-          <li>Baquet à bascule réglable de 2 à 6 litres</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="benefit-grid">
-      <div class="benefit">
-        <span class="num">01</span>
-        <h3>Sobriété hydrique</h3>
-        <p>−40% d'eau consommée par rapport à un mécanisme traditionnel, sur l'ensemble du patrimoine.</p>
-      </div>
-      <div class="benefit">
-        <span class="num">02</span>
-        <h3>Construction responsable</h3>
-        <p>Réservoir 100% recyclé et recyclable, conçu et fabriqué en France.</p>
-      </div>
-      <div class="benefit">
-        <span class="num">03</span>
-        <h3>Maintenance simplifiée</h3>
-        <p>Sans joint de cloche : pas d'entartrage, pas de fuite, moins de sollicitations pour vos équipes.</p>
-      </div>
-      <div class="benefit">
-        <span class="num">04</span>
-        <h3>Fiabilité dans la durée</h3>
-        <p>Réservoir garanti 10 ans, installation en moins de 10 minutes sur tout type de cuvette.</p>
-      </div>
-    </div>
+<section class="section-pad">
+  <div class="wrap center section-head">
+    <span class="eyebrow">Pourquoi WaterFlush</span>
+    <h2>Une solution pensée pour le logement social</h2>
+    <p>Parc important, budgets d'entretien contraints, objectifs de sobriété toujours plus exigeants : WaterFlush répond directement à ces enjeux, avec un réservoir simple, fiable et économe en eau.</p>
   </div>
-</section>
 
-<section class="product on-foam section-pad" style="padding-top:0;">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Découvrir la solution</span>
-      <h2>Le réservoir WC WaterFlush, expliqué simplement</h2>
-      <p>Un baquet à bascule breveté, réglable de 2 à 6 litres, pour une chasse efficace et une consommation d'eau réduite de 40% — sans compromis sur la fiabilité.</p>
-    </div>
-
-    <div class="spec-row">
-      <div class="spec">
-        <span class="label">Économie d'eau</span>
-        <span class="stat">−40%</span>
-        <span class="desc">Baquet à bascule breveté, réglable de 2 à 6 L</span>
+  <div class="wrap benefits">
+    <div class="icon-grid">
+      <div class="icon-tile">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6c6 8 10 13.5 10 18.5A10 10 0 0 1 10 24.5C10 19.5 14 14 20 6Z" fill="none" stroke="#2D74AC" stroke-width="2.6"></path></svg>
+        <span class="t">−40% d'eau</span>
+        <span class="d">Baquet à bascule breveté, réglable de 2 à 6 litres</span>
       </div>
-      <div class="spec">
-        <span class="label">Entretien</span>
-        <span class="stat">0</span>
-        <span class="desc">Pas de joint de cloche : ni entartrage, ni fuite</span>
+      <div class="icon-tile">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 26 26 14M23 11l6 6-3 3-6-6 3-3ZM8 32l6-6" fill="none" stroke="#2D74AC" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span class="t">Sans entretien</span>
+        <span class="d">Pas de joint de cloche : ni entartrage, ni fuite</span>
       </div>
-      <div class="spec">
-        <span class="label">Installation</span>
-        <span class="stat">10 min</span>
-        <span class="desc">Livré pré-monté, compatible toute cuvette</span>
+      <div class="icon-tile">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="12" fill="none" stroke="#2D74AC" stroke-width="2.6"></circle><path d="M20 13v7l5 3" fill="none" stroke="#2D74AC" stroke-width="2.6" stroke-linecap="round"></path></svg>
+        <span class="t">Installation en 10 min</span>
+        <span class="d">Livré pré-monté, compatible avec toute cuvette</span>
       </div>
-      <div class="spec">
-        <span class="label">Matériaux</span>
-        <span class="stat">100%</span>
-        <span class="desc">Réservoir recyclé et recyclable</span>
-      </div>
-      <div class="spec">
-        <span class="label">Fabrication</span>
-        <span class="stat">FR</span>
-        <span class="desc">Conçu et fabriqué en France, label 2025</span>
+      <div class="icon-tile">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 8l4 7h-8l4-7ZM10 26l4-7 4 7h-8ZM22 26l4-7 4 7h-8Z" fill="none" stroke="#2D74AC" stroke-width="2.4" stroke-linejoin="round"></path></svg>
+        <span class="t">100% recyclé</span>
+        <span class="d">Réservoir recyclé et recyclable</span>
       </div>
     </div>
 
-    <div class="badge-row">
-      <div class="guarantee-badge">
-        <span class="num">10</span>
-        <span class="txt"><b>ANS DE GARANTIE</b>Sur le réservoir WaterFlush</span>
+    <div class="benefits-text">
+      <h3>Les + du réservoir WaterFlush</h3>
+      <ul>
+        <li>Réduit de 40% la consommation d'eau par rapport à un mécanisme traditionnel</li>
+        <li>S'adapte à tout type de cuvette grâce à des fixations réglables</li>
+        <li>Livré pré-monté : installation en moins de 10 minutes</li>
+        <li>Système breveté qui ne nécessite aucun entretien</li>
+        <li>Réservoir 100% recyclé et recyclable</li>
+      </ul>
+
+      <div class="block">
+        <h4>Fiabilité et hygiène</h4>
+        <p>Sans joint de cloche, plus d'entartrage ni de fuite. L'eau est renouvelée à chaque utilisation, limitant la prolifération de bactéries.</p>
       </div>
-      <div class="innovation-badge">
-        <span><b>Un concept primé&nbsp;:</b> médaille d'Or au Concours Lépine, distingué aux concours de Genève et de Bruxelles, Prix Innovation au Salon des Maires 2014.</span>
+      <div class="block">
+        <h4>Innovation reconnue</h4>
+        <p>Le baquet à bascule WaterFlush a été primé : médaille d'Or au Concours Lépine, distingué aux concours de Genève et de Bruxelles, Prix Innovation au Salon des Maires 2014.</p>
+      </div>
+
+      <div class="guarantee-strip">
+        <div class="guarantee-chip">
+          <span class="num">10</span>
+          <span class="txt">ans de garantie<br>sur le réservoir</span>
+        </div>
+        <div class="award-chip"><span><b>Fabriqué en France</b> — label officiel obtenu en janvier 2025</span></div>
       </div>
     </div>
-
-    <a class="btn btn-ghost-onfoam" href="#meet">Voir la solution en démonstration sur le stand</a>
   </div>
 </section>
 
 <section class="meet section-pad" id="meet">
-  <div class="wrap meet-card">
-    <div>
-      <span class="eyebrow" style="color:var(--flow);">Rencontrez-nous au congrès</span>
-      <p class="meet-quote" style="margin-top:1rem;">« L'équipe WaterFlush aura le plaisir de vous accueillir au Village des Start-up, sur le stand d'Impulse Partners. »</p>
-      <p class="meet-body">Pendant les trois jours du 86ᵉ Congrès HLM, notre équipe est présente pour échanger sur vos projets et vos problématiques de gestion de l'eau et d'entretien du patrimoine.</p>
-
-      <div class="meet-location">
-        <div class="stand">Palais 2 l'Atlantique<br>Stand A15</div>
-        <div class="sub">Village des Start-up · Stand Impulse Partners</div>
-        <div class="dates">22, 23 &amp; 24 septembre 2026 — Bordeaux</div>
+  <div class="wrap">
+    <div class="meet-panel">
+      <div>
+        <span class="free-access"><span class="dot"></span>Accès libre, sans rendez-vous</span>
+        <p class="meet-quote">« L'équipe WaterFlush aura le plaisir de vous accueillir au Village des Start-up, sur le stand d'Impulse Partners. »</p>
+        <p class="meet-body">Pendant les trois jours du 86ᵉ Congrès HLM, passez nous voir librement pour échanger sur vos projets et vos problématiques de gestion de l'eau et d'entretien du patrimoine.</p>
+        <div class="meet-badges">
+          <span class="badge"><span class="dot"></span>Palais 2 l'Atlantique</span>
+          <span class="badge"><span class="dot"></span>Stand A15</span>
+          <span class="badge"><span class="dot"></span>Village des Start-up</span>
+          <span class="badge"><span class="dot"></span>Stand Impulse Partners</span>
+        </div>
       </div>
 
-      <div class="meet-cta">
-        <a class="btn btn-primary" href="#top">Ajouter le rendez-vous à mon agenda</a>
-        <a class="btn btn-ghost-onink" href="#top">Localiser le stand</a>
+      <div class="plan-wrap">
+        <svg viewBox="0 0 380 280" width="100%" role="img" aria-label="Plan schématique du Village des Start-up avec le stand A15 repéré">
+          <rect x="8" y="8" width="364" height="264" rx="16" fill="#fff" stroke="#DCE7EC" stroke-width="1.5"></rect>
+          <text x="26" y="34" font-family="Nunito, sans-serif" font-weight="800" font-size="11" letter-spacing="1" fill="#4B6478">PALAIS 2 — L'ATLANTIQUE</text>
+          <rect x="24" y="48" width="200" height="184" rx="14" fill="none" stroke="#33C7D8" stroke-width="2" stroke-dasharray="5 4"></rect>
+          <text x="36" y="68" font-family="Nunito, sans-serif" font-weight="800" font-size="10.5" fill="#1C9AA8">VILLAGE DES START-UP</text>
+          <circle cx="128" cy="150" r="8" fill="#153A5B"></circle>
+          <line x1="128" y1="150" x2="182" y2="118" stroke="#153A5B" stroke-width="2"></line>
+          <rect x="182" y="94" width="120" height="50" rx="12" fill="#153A5B"></rect>
+          <text x="196" y="114" font-family="Nunito, sans-serif" font-weight="700" font-size="10" fill="#fff">IMPULSE PARTNERS</text>
+          <text x="196" y="132" font-family="Baloo 2, sans-serif" font-weight="800" font-size="15" fill="#33C7D8">STAND A15</text>
+        </svg>
+        <p class="plan-caption">Plan schématique — non contractuel</p>
       </div>
-    </div>
-
-    <div class="floorplan-wrap">
-      <svg viewBox="0 0 420 300" width="100%" role="img" aria-label="Plan schématique du Village des Start-up avec le stand A15 repéré">
-        <rect x="10" y="10" width="400" height="280" fill="none" stroke="#3B5B76" stroke-width="1.5"></rect>
-        <text x="24" y="34" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="2" fill="#8FA6B8">PALAIS 2 — L'ATLANTIQUE</text>
-        <rect x="30" y="50" width="220" height="200" fill="none" stroke="#4FA9A8" stroke-width="1.5" stroke-dasharray="4 3"></rect>
-        <text x="42" y="70" font-family="IBM Plex Mono, monospace" font-size="10" fill="#4FA9A8">VILLAGE DES START-UP</text>
-        <circle cx="150" cy="165" r="7" fill="#B9803C"></circle>
-        <line x1="150" y1="165" x2="200" y2="130" stroke="#B9803C" stroke-width="1.5"></line>
-        <rect x="200" y="104" width="112" height="46" rx="3" fill="#0F2536"></rect>
-        <text x="212" y="122" font-family="IBM Plex Mono, monospace" font-size="10" fill="#fff">IMPULSE PARTNERS</text>
-        <text x="212" y="138" font-family="Big Shoulders Display, sans-serif" font-weight="800" font-size="16" fill="#B9803C">STAND A15</text>
-      </svg>
-      <p class="floorplan-caption">Plan schématique — non contractuel</p>
     </div>
   </div>
 </section>
@@ -438,38 +339,35 @@
 <footer class="final section-pad">
   <div class="wrap" style="max-width:44rem;">
     <span class="eyebrow">22–24 septembre 2026 · Bordeaux</span>
-    <h2>Rendez-vous<br>à Bordeaux</h2>
-    <p class="lede">Venez rencontrer l'équipe WaterFlush au Village des Start-up — Palais 2 l'Atlantique, stand A15, sur l'espace d'Impulse Partners.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#meet">Venez rencontrer l'équipe WaterFlush</a>
-      <a class="btn btn-ghost-onink" href="#meet">Retrouvez-nous au Village des Start-up</a>
+    <h2>Rendez-vous à Bordeaux</h2>
+    <p class="lede">On vous attend, en toute liberté, au Village des Start-up — Palais 2 l'Atlantique, stand A15, sur l'espace d'Impulse Partners.</p>
+    <div class="hero-badges">
+      <span class="badge badge-onblue"><span class="dot"></span>Sans rendez-vous</span>
+      <span class="badge badge-onblue"><span class="dot"></span>Stand A15</span>
     </div>
-    <p class="recap">22–24 SEPT. 2026 · BORDEAUX · VILLAGE DES START-UP · PALAIS 2 L'ATLANTIQUE, STAND A15</p>
+    <div class="hero-cta">
+      <a class="pill pill-light" href="#meet">Nous retrouver au Village des Start-up</a>
+    </div>
   </div>
 </footer>
 
 <div class="foot">
-  <span class="logotype">Water<span class="mark">Flush</span></span>
+  <span class="logo-word" style="font-size:1.1rem;">Water<b>Flush</b></span>
   <small>86ᵉ Congrès HLM de l'Union sociale pour l'habitat</small>
 </div>
 
 <script>
   (function(){
     var target = new Date('2026-09-22T09:00:00+02:00').getTime();
-    var el = document.getElementById('countdown-value');
-    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+    var el = document.getElementById('stamp-days');
     function render(){
-      var now = Date.now();
-      var diff = target - now;
+      var diff = target - Date.now();
       if (!el) return;
-      if (diff <= 0){ el.textContent = 'en cours'; return; }
-      var d = Math.floor(diff / 86400000); diff -= d * 86400000;
-      var h = Math.floor(diff / 3600000); diff -= h * 3600000;
-      var m = Math.floor(diff / 60000);
-      el.textContent = 'J-' + d + ' · ' + String(h).padStart(2,'0') + 'h' + String(m).padStart(2,'0');
+      if (diff <= 0){ el.innerHTML = 'Sur place'; return; }
+      var d = Math.ceil(diff / 86400000);
+      el.innerHTML = d + '<span> j</span>';
     }
     render();
-    setInterval(render, reduced ? 60000 : 1000);
+    setInterval(render, 60000);
   })();
 </script>
