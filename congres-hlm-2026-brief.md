@@ -25,13 +25,11 @@
 - **Fabrication française** : conception et fabrication en France (site historique à Falaise, Normandie), assemblage réalisé avec des partenaires situés en Normandie et en Bretagne (circuits courts)
 - **Label officiel « Fabriqué en France »** obtenu en janvier 2025
 - **Innovation reconnue** : concept du baquet à bascule primé — médaille d'Or au Concours Lépine, primé aux concours de Genève et de Bruxelles, Prix Innovation au Salon des Maires 2014
-
-*Point à confirmer avant mise en ligne*
-- **Garantie réservoir 10 ans** : mentionnée dans le brief initial transmis, mais non retrouvée dans les contenus de site fournis à ce stade (page produit, RSE, actualités). Elle n'est **pas utilisée comme fait affirmé** dans cette version — elle apparaît uniquement en note "à valider" dans les sections concernées. Merci de confirmer sa source exacte (fiche technique, CGV, page SAV) avant intégration en copy finale ; en son absence, la page peut fonctionner pleinement sans elle grâce aux autres preuves déjà solides (-40%, sans entretien, 100% recyclé, Fabriqué en France).
+- **Réservoir garanti 10 ans** (fait confirmé)
 
 Aucune autre statistique, certification ou caractéristique produit que celles listées ci-dessus n'est utilisée dans ce document.
 
-**Sources & limites de cette version :** le fichier « content crawler » fourni initialement ne listait que des URL du site waterflush.eu, sans texte de page ; l'accès direct au site reste bloqué depuis cet environnement (politique réseau du sandbox). Les faits produits et RSE ci-dessus proviennent du texte de page produit et de la page démarche RSE que vous avez collé directement dans la conversation. Le nom officiel de l'événement, sa thématique et son identité visuelle proviennent du visuel officiel du congrès fourni.
+**Sources & limites de cette version :** le fichier « content crawler » fourni initialement ne listait que des URL du site waterflush.eu, sans texte de page ; l'accès direct au site reste bloqué depuis cet environnement (politique réseau du sandbox). Les faits produits et RSE ci-dessus proviennent du texte de page produit et de la page démarche RSE que vous avez collé directement dans la conversation, complété par votre confirmation directe de la garantie réservoir 10 ans. Le nom officiel de l'événement, sa thématique et son identité visuelle proviennent du visuel officiel du congrès fourni.
 
 ---
 
@@ -41,7 +39,7 @@ Aucune autre statistique, certification ou caractéristique produit que celles l
 > WaterFlush au 86ᵉ Congrès HLM
 
 **Sous-headline**
-> -40% d'eau, sans entretien, fabriqué en France. Venez voir la solution en vrai — du 22 au 24 septembre, à Bordeaux.
+> -40% d'eau, sans entretien, garanti 10 ans, fabriqué en France. Venez voir la solution en vrai — du 22 au 24 septembre, à Bordeaux.
 
 **Corps de texte**
 WaterFlush sera présent au 86ᵉ Congrès HLM de l'Union sociale pour l'habitat, le rendez-vous des acteurs du logement social. Trois jours pour rencontrer notre équipe, découvrir notre réservoir WC breveté et échanger sur vos enjeux de consommation d'eau et d'entretien du patrimoine.
@@ -69,7 +67,7 @@ Faire comprendre en 3 secondes : qui, quoi, quand, où — et faire atterrir imm
 Bandeau horizontal en boucle continue, séparateurs graphiques (points, traits obliques ou icône goutte) entre chaque message. Répéter la séquence en continu.
 
 ```
--40% d'eau  ◆  Fabriqué en France  ◆  100% recyclé & recyclable  ◆  Sans entretien  ◆  Installation en 10 min  ◆  Innovation récompensée  ◆
+-40% d'eau  ◆  Fabriqué en France  ◆  100% recyclé & recyclable  ◆  Sans entretien  ◆  Installation en 10 min  ◆  Garantie 10 ans  ◆
 ```
 
 **Détail des messages (validés uniquement)**
@@ -78,7 +76,7 @@ Bandeau horizontal en boucle continue, séparateurs graphiques (points, traits o
 - « 100% recyclé & recyclable »
 - « Sans entretien »
 - « Installation en 10 min »
-- « Innovation récompensée »
+- « Garantie 10 ans »
 
 **Direction visuelle recommandée**
 Fond contrastant avec le hero (ex. bleu marque plein si le hero est clair, ou blanc si le hero est bleu), texte en majuscules, poids de police fort, défilement lent et régulier (pas d'à-coups), séparateur graphique repris du logo (la goutte/vague stylisée). Hauteur de bandeau fine pour rester dynamique sans alourdir la page.
@@ -97,13 +95,13 @@ Créer un rythme visuel, ancrer immédiatement les preuves de valeur chiffrées 
 > Moins d'eau consommée, moins d'interventions techniques, plus de sérénité pour vos équipes.
 
 **Corps de texte**
-Les bailleurs sociaux gèrent un parc important, des budgets d'entretien contraints et des objectifs de sobriété toujours plus exigeants. WaterFlush répond directement à ces enjeux : un réservoir WC qui réduit de 40% la consommation d'eau, fabriqué en France à partir d'un réservoir 100% recyclé et recyclable, et conçu — grâce à son système breveté sans joint de cloche — pour fonctionner durablement sans entretien. Livré pré-monté, il s'installe en moins de 10 minutes sur tout type de cuvette, sans complexifier vos chantiers de rénovation.
+Les bailleurs sociaux gèrent un parc important, des budgets d'entretien contraints et des objectifs de sobriété toujours plus exigeants. WaterFlush répond directement à ces enjeux : un réservoir WC qui réduit de 40% la consommation d'eau, fabriqué en France à partir d'un réservoir 100% recyclé et recyclable, et conçu — grâce à son système breveté sans joint de cloche — pour fonctionner durablement sans entretien, avec une garantie de 10 ans. Livré pré-monté, il s'installe en moins de 10 minutes sur tout type de cuvette, sans complexifier vos chantiers de rénovation.
 
 **Points clés (format grille ou liste à puces courtes)**
 - **Sobriété hydrique** — -40% d'eau consommée par rapport à un mécanisme traditionnel, sur l'ensemble du patrimoine
 - **Durabilité & construction responsable** — réservoir 100% recyclé et recyclable, conçu et fabriqué en France
 - **Maintenance simplifiée** — système breveté sans joint de cloche : pas d'entartrage, pas de fuite, moins de sollicitations pour vos équipes techniques
-- **Facilité de déploiement** — livré pré-monté, installation en moins de 10 minutes, compatible avec tout type de cuvette
+- **Fiabilité dans la durée** — réservoir garanti 10 ans, livré pré-monté et installé en moins de 10 minutes sur tout type de cuvette
 
 **CTA**
 > Découvrir la solution WaterFlush
@@ -125,7 +123,7 @@ Faire le pont entre le produit et les préoccupations métier du visiteur (budge
 > Un système breveté qui réduit la consommation d'eau, sans compromis sur la fiabilité ni la simplicité de pose.
 
 **Corps de texte**
-Le réservoir WC WaterFlush repose sur un baquet à bascule breveté, réglable de 2 à 6 litres, qui permet de réduire de 40% la consommation d'eau par rapport à un mécanisme traditionnel — tout en assurant une chasse efficace grâce à un passage direct de l'eau vers la cuvette. L'absence de joint de cloche supprime les risques de fuite et d'entartrage : le système ne nécessite aucun entretien. Conçu et fabriqué en France, il est livré pré-monté et s'installe en moins de 10 minutes sur tout type de cuvette. Le réservoir est 100% recyclé et recyclable.
+Le réservoir WC WaterFlush repose sur un baquet à bascule breveté, réglable de 2 à 6 litres, qui permet de réduire de 40% la consommation d'eau par rapport à un mécanisme traditionnel — tout en assurant une chasse efficace grâce à un passage direct de l'eau vers la cuvette. L'absence de joint de cloche supprime les risques de fuite et d'entartrage : le système ne nécessite aucun entretien, et le réservoir est garanti 10 ans. Conçu et fabriqué en France, il est livré pré-monté et s'installe en moins de 10 minutes sur tout type de cuvette. Le réservoir est 100% recyclé et recyclable.
 
 **Format recommandé**
 Présentation en vignettes visuelles simples (icône + chiffre ou mot-clé + une phrase courte) :
@@ -137,6 +135,9 @@ Présentation en vignettes visuelles simples (icône + chiffre ou mot-clé + une
 | ⏱️ | Installation en 10 min | Livré pré-monté, compatible avec tout type de cuvette |
 | ♻️ | 100% recyclé & recyclable | Réservoir conçu à partir de matériaux recyclés |
 | 🇫🇷 | Fabriqué en France | Conçu et fabriqué en France, label officiel obtenu en 2025 |
+
+**Mention garantie (mise en avant séparée, format badge)**
+> Réservoir garanti 10 ans
 
 **Mention innovation (encart séparé, optionnel)**
 > Un concept primé : médaille d'Or au Concours Lépine, distingué aux concours de Genève et de Bruxelles, Prix Innovation au Salon des Maires 2014.
@@ -235,10 +236,10 @@ Créer un sentiment d'urgence et de clôture : après avoir tout expliqué, la p
 | Matériaux | Réservoir 100% recyclé et recyclable | ✅ verbatim du site |
 | Fabrication | Conçu et fabriqué en France, label « Fabriqué en France » (janvier 2025) | ✅ verbatim du site |
 | Récompenses | Concours Lépine (Or), Genève, Bruxelles, Prix Innovation Salon des Maires 2014 | ✅ verbatim du site, usage optionnel (encart, pas systématique) |
-| Garantie réservoir 10 ans | Non confirmée dans les contenus fournis à ce stade | ⚠️ non utilisée comme fait affirmé — signalée « à valider » |
-| Éléments non utilisés (car non fournis ou non vérifiés) | Statistiques hors périmètre listé, certifications autres que « Fabriqué en France », garantie 10 ans | ✅ volontairement absents ou marqués à valider |
+| Garantie réservoir 10 ans | Confirmée par vous | ✅ intégrée comme fait acquis dans le hero, la section 3 et la section 4 |
+| Éléments non utilisés (car non fournis ou non vérifiés) | Statistiques hors périmètre listé, certifications autres que « Fabriqué en France » | ✅ volontairement absents |
 
-Aucune incohérence de date, de lieu, de stand ou de claim produit n'a été identifiée entre les sections. Le seul point en suspens est la garantie réservoir 10 ans, traitée en note à part plutôt qu'intégrée comme fait acquis.
+Aucune incohérence de date, de lieu, de stand ou de claim produit n'a été identifiée entre les sections.
 
 ---
 
