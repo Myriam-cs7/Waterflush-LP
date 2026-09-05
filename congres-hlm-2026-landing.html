@@ -69,8 +69,8 @@
   .topbar{ background:#fff; border-bottom:1px solid var(--border); }
   .topbar .wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-top:.9rem; padding-bottom:.9rem; }
   .logo{ display:flex; align-items:center; text-decoration:none; }
-  .logo-img{ height:42px; width:auto; display:block; }
-  .logo-img-foot{ height:32px; }
+  .logo-img{ height:48px; width:auto; display:block; }
+  .logo-img-foot{ height:38px; }
   .topbar-tag{ font-weight:700; color:var(--muted); font-size:.9rem; }
   @media (max-width:640px){ .topbar-tag{ display:none; } }
 
@@ -99,7 +99,7 @@
   }
   .congress-sticker{
     position:absolute; top:clamp(1.2rem,4vw,2.4rem); right:clamp(1rem,6vw,4.5rem); z-index:3;
-    width:clamp(100px,11vw,145px);
+    width:clamp(115px,12.5vw,165px);
     border-radius:13px; display:block;
     box-shadow:0 14px 28px rgba(21,58,91,.3);
     transform:rotate(-8deg);
@@ -108,7 +108,7 @@
 
   .congress-sticker-foot{
     position:absolute; bottom:clamp(1.2rem,4vw,2rem); right:clamp(1rem,6vw,4rem); z-index:3;
-    width:clamp(100px,11vw,145px);
+    width:clamp(115px,12.5vw,165px);
     border-radius:13px; display:block;
     box-shadow:0 14px 28px rgba(8,26,42,.35);
     transform:rotate(7deg);
@@ -117,11 +117,11 @@
 
   /* ---------- Marquee ---------- */
   .marquee{ background:var(--blue-deep); overflow:hidden; }
-  .marquee-track{ display:flex; width:max-content; animation:scroll 30s linear infinite; }
+  .marquee-track{ display:flex; width:max-content; animation:scroll 16s linear infinite; }
   @keyframes scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce){ .marquee-track{ animation-duration:110s; } }
+  @media (prefers-reduced-motion: reduce){ .marquee-track{ animation-duration:90s; } }
   .marquee-seq{ display:flex; align-items:center; flex:none; }
-  .marquee-item{ display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.6rem; font-weight:800; font-size:1rem; color:#fff; white-space:nowrap; }
+  .marquee-item{ display:inline-flex; align-items:center; gap:.6rem; padding:1.05rem 1.6rem; font-weight:800; font-size:1rem; color:#fff; white-space:nowrap; }
   .marquee-item svg{ width:20px; height:20px; flex:none; }
 
   /* ---------- Section shells ---------- */
