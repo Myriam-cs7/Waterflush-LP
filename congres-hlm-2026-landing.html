@@ -192,19 +192,7 @@
   .catalog-card .eyebrow{ display:block; font-weight:800; color:var(--blue-mid); text-transform:uppercase; letter-spacing:.03em; font-size:.9rem; margin-bottom:.6rem; }
   .catalog-card h2{ color:var(--blue-deep); font-size:clamp(1.6rem,3vw,2.1rem); }
   .catalog-card > p{ margin-top:.8rem; color:var(--muted); font-size:1rem; max-width:30em; margin-left:auto; margin-right:auto; }
-  .catalog-form{ display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.7rem; justify-content:center; }
-  .catalog-form input{
-    flex:1 1 13rem; border:2px solid var(--border); border-radius:999px;
-    padding:.85rem 1.3rem; font-family:'Nunito', sans-serif; font-size:.95rem;
-    background:#fff; color:var(--ink);
-  }
-  .catalog-form input[name="prenom"],
-  .catalog-form input[name="nom"]{ flex:1 1 9rem; }
-  .catalog-form input::placeholder{ color:#8098A8; }
-  .catalog-form input:focus-visible{ outline:none; border-color:var(--blue-mid); box-shadow:0 0 0 4px rgba(45,116,172,.16); }
-  .catalog-form button{ flex:0 0 auto; }
-  .catalog-note{ margin-top:1rem; font-size:.82rem; color:var(--muted); transition:color .15s ease; }
-  .catalog-note.is-success{ color:#127763; font-weight:700; }
+  .catalog-cta{ margin-top:1.7rem; }
 </style>
 
 <div class="topbar">
@@ -339,14 +327,9 @@
     <div class="catalog-card">
       <h2>Recevez en exclusivité notre nouveau catalogue 2026-2027</h2>
       <p>Nos dernières références, nos fiches techniques, toutes nos gammes réunies dans un seul document. Soyez parmi les premiers à le recevoir.</p>
-      <form class="catalog-form" id="catalog-form">
-        <input type="text" name="prenom" placeholder="Prénom" aria-label="Prénom" autocomplete="given-name" required>
-        <input type="text" name="nom" placeholder="Nom" aria-label="Nom" autocomplete="family-name" required>
-        <input type="text" name="organisation" placeholder="Organisme / entreprise (optionnel)" aria-label="Organisme ou entreprise" autocomplete="organization">
-        <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
-        <button type="submit" class="pill pill-dark">Recevoir le catalogue</button>
-      </form>
-      <p class="catalog-note" id="catalog-note"></p>
+      <div class="catalog-cta">
+        <a class="pill pill-dark" href="mailto:mathias.sibillotte@waterflush.eu?subject=Demande%20de%20catalogue%20HLM&amp;body=Bonjour,%20je%20souhaite%20recevoir%20le%20catalogue%20WaterFlush%20exclusivite%202026-2027">Recevoir notre nouveau catalogue 2026-2027</a>
+      </div>
     </div>
   </div>
 </section>
@@ -379,18 +362,3 @@
   <small>86ᵉ Congrès HLM de l'Union sociale pour l'habitat</small>
 </div>
 
-<script>
-  (function(){
-    var form = document.getElementById('catalog-form');
-    var note = document.getElementById('catalog-note');
-    if (!form || !note) return;
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var prenom = form.prenom.value;
-      var email = form.email.value;
-      note.textContent = 'Merci ' + prenom + ' ! Le catalogue 2026-2027 va être envoyé à ' + email + '.';
-      note.classList.add('is-success');
-      Array.prototype.forEach.call(form.querySelectorAll('input, button'), function(el){ el.disabled = true; });
-    });
-  })();
-</script>
