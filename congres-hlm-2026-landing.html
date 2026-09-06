@@ -104,7 +104,9 @@
     box-shadow:0 14px 28px rgba(21,58,91,.3);
     transform:rotate(-8deg);
   }
-  @media (max-width:760px){ .congress-sticker{ display:none; } }
+  @media (max-width:760px){
+    .congress-sticker{ position:static; display:block; margin:1.6rem auto 0; transform:rotate(-6deg); }
+  }
 
   .congress-sticker-foot{
     position:absolute; bottom:clamp(1.2rem,4vw,2rem); right:clamp(1rem,6vw,4rem); z-index:3;
@@ -113,7 +115,9 @@
     box-shadow:0 14px 28px rgba(8,26,42,.35);
     transform:rotate(7deg);
   }
-  @media (max-width:760px){ .congress-sticker-foot{ display:none; } }
+  @media (max-width:760px){
+    .congress-sticker-foot{ position:static; display:block; margin:1.6rem auto 0; transform:rotate(5deg); }
+  }
 
   /* ---------- Marquee ---------- */
   .marquee{ background:var(--blue-deep); overflow:hidden; }
@@ -171,6 +175,13 @@
   .meet-quote{ font-family:'Baloo 2', sans-serif; font-weight:700; font-size:clamp(1.3rem,2.2vw,1.7rem); color:var(--blue-deep); line-height:1.25; }
   .meet-body{ margin-top:1rem; color:var(--ink); max-width:34em; }
   .meet-badges{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.4rem; }
+
+  .mini-map{ margin-top:1.9rem; background:var(--tint); border-radius:20px; padding:1.3rem; }
+  .mini-map svg{ width:100%; height:auto; display:block; }
+  .mini-map-caption{ margin-top:.6rem; font-size:.72rem; color:var(--muted); font-weight:700; text-align:right; }
+  .pin-pulse{ animation:pinPulse 2.2s ease-out infinite; }
+  @keyframes pinPulse{ 0%{ r:4; opacity:.55; } 100%{ r:15; opacity:0; } }
+  @media (prefers-reduced-motion: reduce){ .pin-pulse{ animation:none; opacity:0; } }
 
   /* ---------- Final CTA ---------- */
   .final{
@@ -343,6 +354,35 @@
       <div class="meet-badges">
         <span class="badge"><span class="dot"></span>Village des Start-up</span>
         <span class="badge"><span class="dot"></span>Stand A15</span>
+      </div>
+
+      <div class="mini-map">
+        <svg viewBox="0 0 400 220" role="img" aria-label="Plan schématique du Village des Start-up, stand A15">
+          <rect x="6" y="6" width="388" height="208" rx="18" fill="#fff" stroke="#DCE7EC" stroke-width="1.5"></rect>
+          <text x="24" y="30" font-family="Nunito, sans-serif" font-weight="800" font-size="11" letter-spacing="1" fill="#4B6478">PALAIS 2 — L'ATLANTIQUE</text>
+
+          <rect x="24" y="44" width="230" height="152" rx="16" fill="none" stroke="#33C7D8" stroke-width="2" stroke-dasharray="6 5"></rect>
+          <text x="36" y="64" font-family="Nunito, sans-serif" font-weight="800" font-size="10.5" letter-spacing=".4" fill="#1C9AA8">VILLAGE DES START-UP</text>
+
+          <rect x="40" y="78" width="34" height="24" rx="6" fill="#EEF5F7" stroke="#DCE7EC"></rect>
+          <rect x="84" y="78" width="34" height="24" rx="6" fill="#EEF5F7" stroke="#DCE7EC"></rect>
+          <rect x="40" y="112" width="34" height="24" rx="6" fill="#EEF5F7" stroke="#DCE7EC"></rect>
+          <rect x="40" y="150" width="34" height="24" rx="6" fill="#EEF5F7" stroke="#DCE7EC"></rect>
+          <rect x="192" y="78" width="34" height="24" rx="6" fill="#EEF5F7" stroke="#DCE7EC"></rect>
+          <rect x="192" y="150" width="34" height="24" rx="6" fill="#EEF5F7" stroke="#DCE7EC"></rect>
+
+          <rect x="118" y="110" width="50" height="36" rx="9" fill="#153A5B"></rect>
+          <text x="126" y="133" font-family="Baloo 2, sans-serif" font-weight="800" font-size="13" fill="#33C7D8">A15</text>
+
+          <line x1="168" y1="122" x2="272" y2="98" stroke="#153A5B" stroke-width="1.6" stroke-dasharray="3 4"></line>
+          <circle class="pin-pulse" cx="143" cy="102" r="4" fill="#33C7D8"></circle>
+          <circle cx="143" cy="102" r="5" fill="#153A5B" stroke="#fff" stroke-width="1.5"></circle>
+
+          <rect x="272" y="68" width="112" height="60" rx="12" fill="#153A5B"></rect>
+          <text x="284" y="92" font-family="Nunito, sans-serif" font-weight="700" font-size="9.5" fill="#fff">IMPULSE PARTNERS</text>
+          <text x="284" y="112" font-family="Baloo 2, sans-serif" font-weight="800" font-size="14" fill="#33C7D8">STAND A15</text>
+        </svg>
+        <p class="mini-map-caption">Plan schématique — non contractuel</p>
       </div>
     </div>
   </div>
