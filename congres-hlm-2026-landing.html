@@ -201,11 +201,7 @@
   .catalog-card .eyebrow{ display:block; font-weight:800; color:var(--blue-mid); text-transform:uppercase; letter-spacing:.03em; font-size:.9rem; margin-bottom:.6rem; }
   .catalog-card h2{ color:var(--blue-deep); font-size:clamp(1.6rem,3vw,2.1rem); text-wrap:balance; }
   .catalog-card > p{ margin-top:.8rem; color:var(--muted); font-size:1rem; max-width:26em; margin-left:auto; margin-right:auto; text-wrap:balance; }
-  .catalog-cta{ margin-top:1.7rem; }
-  .catalog-email-fallback{ margin-top:1rem; font-size:.86rem; color:var(--muted); }
-  .catalog-email-fallback a{ color:var(--blue-mid); font-weight:700; text-decoration:underline; }
-  .catalog-email-fallback #catalog-copy-note{ display:block; margin-top:.3rem; font-size:.76rem; }
-  .catalog-email-fallback #catalog-copy-note.is-copied{ color:#127763; font-weight:700; }
+  .catalog-cta{ margin-top:1.7rem; min-height:3.2rem; }
 </style>
 
 <div class="topbar" id="top">
@@ -339,10 +335,7 @@
     <div class="catalog-card">
       <h2>Recevez en exclusivité notre nouveau catalogue</h2>
       <p>Nos dernières références, nos fiches techniques, toutes nos gammes réunies dans un seul document. Soyez parmi les premiers à le recevoir.</p>
-      <div class="catalog-cta">
-        <a class="pill pill-dark" id="catalog-mailto" href="mailto:marketing@waterflush.eu?subject=Demande%20de%20catalogue%20HLM&amp;body=Bonjour,%20je%20souhaite%20recevoir%20le%20catalogue%20WaterFlush%20exclusivite%202026-2027" target="_blank" rel="noopener">Recevoir notre catalogue gratuit</a>
-      </div>
-      <p class="catalog-email-fallback">Ou écrivez-nous directement à <a href="mailto:marketing@waterflush.eu">marketing@waterflush.eu</a><br><span id="catalog-copy-note">Ce texte est cliquable et copiable si votre messagerie ne s'ouvre pas automatiquement.</span></p>
+      <div class="catalog-cta"></div>
     </div>
   </div>
 </section>
@@ -403,23 +396,5 @@
   <small>86ᵉ Congrès HLM de l'Union sociale pour l'habitat</small>
 </div>
 
-<script>
-  (function(){
-    var btn = document.getElementById('catalog-mailto');
-    var note = document.getElementById('catalog-copy-note');
-    if (!btn || !note) return;
-    var defaultText = note.textContent;
-    btn.addEventListener('click', function(){
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText('marketing@waterflush.eu').then(function(){
-          note.textContent = 'Adresse copiee : marketing@waterflush.eu (collez-la dans un nouveau mail si votre messagerie ne s\'est pas ouverte).';
-          note.classList.add('is-copied');
-        }).catch(function(){
-          note.textContent = defaultText;
-        });
-      }
-    });
-  })();
-</script>
 
 
