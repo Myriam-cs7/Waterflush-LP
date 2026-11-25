@@ -4,13 +4,12 @@
 /* Pas d'import de police : le bandeau reprend celle du site. */
 
 .wf-awards-root{
-  --wf-blue-deep:#153A5B;
   --wf-navy:#16294A;
   --wf-blue-mid:#2D74AC;
   --wf-turq:#33C7D8;
   --wf-ink:#181B1E;
   --wf-muted:#4B6478;
-  --wf-border:rgba(21,58,91,.14);
+  --wf-border:rgba(21,58,91,.13);
   --wf-font:'DM Sans','Inter','Plus Jakarta Sans','Poppins','Montserrat',
             ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
   font-family:var(--wf-font);
@@ -26,27 +25,26 @@
 .wf-awards{
   position:relative;
   margin:0;
-  padding:clamp(2.6rem,5vw,4rem) 0 clamp(2.4rem,4.5vw,3.4rem);
+  padding:clamp(2.6rem,5vw,4rem) 0 clamp(2.6rem,5vw,3.8rem);
   background:#FFFFFF;
-  overflow:hidden;
 }
 
 /* ---------- Titre ---------- */
 .wf-awards-head{
   max-width:46rem;
-  margin:0 auto clamp(2rem,3.6vw,2.8rem);
+  margin:0 auto clamp(1.9rem,3.4vw,2.6rem);
   padding:0 1.25rem;
   text-align:center;
 }
 .wf-awards-head .wf-eyebrow{
   display:inline-flex; align-items:center; gap:.5rem;
-  font-weight:800; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:700; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase;
   color:var(--wf-blue-mid);
-  margin:0 0 .85rem;
+  margin:0 0 .8rem;
 }
 .wf-awards-head .wf-eyebrow::before,
 .wf-awards-head .wf-eyebrow::after{
-  content:""; display:block; width:28px; height:2px; border-radius:2px;
+  content:""; display:block; width:26px; height:2px; border-radius:2px;
   background:linear-gradient(90deg, transparent, var(--wf-turq));
 }
 .wf-awards-head .wf-eyebrow::after{ background:linear-gradient(90deg, var(--wf-turq), transparent); }
@@ -61,100 +59,109 @@
   text-wrap:balance;
 }
 .wf-awards-head p{
-  margin:.9rem auto 0;
+  margin:.85rem auto 0;
   max-width:36em;
-  font-size:1.03rem;
+  font-size:1rem;
   color:var(--wf-muted);
 }
 
-/* ---------- Tapis déroulant ---------- */
+/* ---------- Le filet : un seul bandeau continu ---------- */
+.wf-aw-frame{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 clamp(1rem,3vw,1.5rem);
+}
+.wf-aw-band{
+  position:relative;
+  border:1px solid var(--wf-border);
+  border-radius:20px;
+  background:#FFFFFF;
+  box-shadow:0 1px 2px rgba(21,58,91,.03), 0 14px 34px -22px rgba(21,58,91,.30);
+  overflow:hidden;
+}
 .wf-aw-marquee{
   position:relative;
   overflow:hidden;
-  padding:.4rem 0 .2rem;
-  -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
-          mask-image:linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  padding:clamp(1.5rem,2.6vw,2rem) 0;
+  -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+          mask-image:linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
 }
 .wf-aw-track{
   display:flex;
   width:max-content;
-  animation:wf-aw-scroll 42s linear infinite;
+  animation:wf-aw-scroll 46s linear infinite;
 }
-.wf-aw-marquee:hover .wf-aw-track,
-.wf-aw-marquee:focus-within .wf-aw-track{ animation-play-state:paused; }
+.wf-aw-band:hover .wf-aw-track,
+.wf-aw-band:focus-within .wf-aw-track{ animation-play-state:paused; }
 @keyframes wf-aw-scroll{
   from{ transform:translate3d(0,0,0); }
   to{ transform:translate3d(-25%,0,0); }
 }
 @media (prefers-reduced-motion: reduce){
-  .wf-aw-track{ animation-duration:320s; }
+  .wf-aw-track{ animation-duration:340s; }
 }
-.wf-aw-seq{ display:flex; align-items:flex-start; flex:none; }
+.wf-aw-seq{ display:flex; align-items:stretch; flex:none; }
 
-/* ---------- Carte ---------- */
-.wf-aw-card{
+/* ---------- Une récompense ---------- */
+.wf-aw-item{
+  position:relative;
   flex:none;
-  width:clamp(190px,21vw,236px);
-  margin:0 clamp(.5rem,1.1vw,.85rem);
-  padding:0;
+  width:clamp(196px,22vw,250px);
+  margin:0;
+  padding:0 clamp(1.1rem,2.2vw,1.8rem);
   display:flex;
   flex-direction:column;
   align-items:center;
+  justify-content:center;
   text-align:center;
 }
-.wf-aw-tile{
-  width:100%;
-  height:clamp(124px,13vw,150px);
-  display:flex; align-items:center; justify-content:center;
-  padding:1rem 1.1rem;
-  background:#fff;
-  border:1px solid var(--wf-border);
-  border-radius:18px;
-  box-shadow:0 2px 4px rgba(21,58,91,.04), 0 10px 24px -14px rgba(21,58,91,.28);
-  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
-}
-.wf-aw-card:hover .wf-aw-tile{
-  transform:translateY(-4px);
-  border-color:rgba(51,199,216,.55);
-  box-shadow:0 3px 6px rgba(21,58,91,.05), 0 18px 34px -16px rgba(21,58,91,.34);
+/* séparateur discret entre chaque récompense */
+.wf-aw-item::before{
+  content:"";
+  position:absolute;
+  left:0; top:8%; bottom:8%;
+  width:1px;
+  background:linear-gradient(180deg, transparent, var(--wf-border) 22%, var(--wf-border) 78%, transparent);
 }
 .wf-aw-logo{
   width:100%;
-  height:100%;
+  height:clamp(76px,8.4vw,94px);
   background-repeat:no-repeat;
   background-position:center;
   background-size:contain;
 }
-.wf-aw-card--photo .wf-aw-tile{ padding:.6rem .75rem; }
+.wf-aw-item--wide .wf-aw-logo{ height:clamp(80px,8.8vw,98px); }
 
-.wf-aw-card figcaption{
-  margin-top:.85rem;
+.wf-aw-item figcaption{
+  margin-top:.95rem;
   display:flex;
   flex-direction:column;
-  gap:.18rem;
-  padding:0 .2rem;
+  gap:.2rem;
 }
 .wf-aw-title{
-  font-family:var(--wf-font);
   font-weight:700;
-  font-size:.95rem;
+  font-size:.93rem;
   line-height:1.3;
   color:var(--wf-navy);
   text-wrap:balance;
 }
 .wf-aw-sub{
-  font-size:.82rem;
-  line-height:1.35;
+  font-size:.8rem;
+  line-height:1.4;
   color:var(--wf-muted);
   text-wrap:balance;
 }
 
 @media (max-width:640px){
-  .wf-aw-card{ width:168px; }
-  .wf-aw-tile{ height:112px; padding:.85rem; border-radius:15px; }
-  .wf-aw-title{ font-size:.9rem; }
-  .wf-aw-sub{ font-size:.77rem; }
-  .wf-aw-track{ animation-duration:34s; }
+  .wf-aw-frame{ padding:0 1rem; }
+  .wf-aw-band{ border-radius:16px; }
+  .wf-aw-item{ width:176px; padding:0 1rem; }
+  .wf-aw-logo{ height:68px; }
+  .wf-aw-item--wide .wf-aw-logo{ height:72px; }
+  .wf-aw-item figcaption{ margin-top:.8rem; }
+  .wf-aw-title{ font-size:.87rem; }
+  .wf-aw-sub{ font-size:.76rem; }
+  .wf-aw-track{ animation-duration:36s; }
 }
 
 /* ---------- Logos ---------- */
@@ -171,127 +178,131 @@
     <p>Notre technologie est distinguée par les plus grands concours d'invention et par les acteurs publics de la transition écologique.</p>
   </div>
 
-  <div class="wf-aw-marquee">
-    <div class="wf-aw-track">
-      <div class="wf-aw-seq">
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-lepine" role="img" aria-label="Concours Lépine"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Concours Lépine</span>
-            <span class="wf-aw-sub">Médaille d'Or</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-geneve" role="img" aria-label="Inventions Geneva"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Inventions Geneva</span>
-            <span class="wf-aw-sub">Salon International des Inventions de Genève</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-bruxelles" role="img" aria-label="Concours Mondial de Bruxelles"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Concours Mondial de Bruxelles</span>
-            <span class="wf-aw-sub">International Competition</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card wf-aw-card--photo">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-trophee" role="img" aria-label="Prix de l'Innovation Territoriale 2025"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Prix de l'Innovation Territoriale 2025</span>
-            <span class="wf-aw-sub">Lauréat · Salon des Maires et des Collectivités Locales</span>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="wf-aw-seq" aria-hidden="true">
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-lepine" role="img" aria-label="Concours Lépine"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Concours Lépine</span>
-            <span class="wf-aw-sub">Médaille d'Or</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-geneve" role="img" aria-label="Inventions Geneva"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Inventions Geneva</span>
-            <span class="wf-aw-sub">Salon International des Inventions de Genève</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-bruxelles" role="img" aria-label="Concours Mondial de Bruxelles"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Concours Mondial de Bruxelles</span>
-            <span class="wf-aw-sub">International Competition</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card wf-aw-card--photo">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-trophee" role="img" aria-label="Prix de l'Innovation Territoriale 2025"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Prix de l'Innovation Territoriale 2025</span>
-            <span class="wf-aw-sub">Lauréat · Salon des Maires et des Collectivités Locales</span>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="wf-aw-seq" aria-hidden="true">
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-lepine" role="img" aria-label="Concours Lépine"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Concours Lépine</span>
-            <span class="wf-aw-sub">Médaille d'Or</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-geneve" role="img" aria-label="Inventions Geneva"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Inventions Geneva</span>
-            <span class="wf-aw-sub">Salon International des Inventions de Genève</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-bruxelles" role="img" aria-label="Concours Mondial de Bruxelles"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Concours Mondial de Bruxelles</span>
-            <span class="wf-aw-sub">International Competition</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card wf-aw-card--photo">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-trophee" role="img" aria-label="Prix de l'Innovation Territoriale 2025"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Prix de l'Innovation Territoriale 2025</span>
-            <span class="wf-aw-sub">Lauréat · Salon des Maires et des Collectivités Locales</span>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="wf-aw-seq" aria-hidden="true">
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-lepine" role="img" aria-label="Concours Lépine"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Concours Lépine</span>
-            <span class="wf-aw-sub">Médaille d'Or</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-geneve" role="img" aria-label="Inventions Geneva"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Inventions Geneva</span>
-            <span class="wf-aw-sub">Salon International des Inventions de Genève</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-bruxelles" role="img" aria-label="Concours Mondial de Bruxelles"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Concours Mondial de Bruxelles</span>
-            <span class="wf-aw-sub">International Competition</span>
-          </figcaption>
-        </figure>
-        <figure class="wf-aw-card wf-aw-card--photo">
-          <div class="wf-aw-tile"><div class="wf-aw-logo wf-lg-trophee" role="img" aria-label="Prix de l'Innovation Territoriale 2025"></div></div>
-          <figcaption>
-            <span class="wf-aw-title">Prix de l'Innovation Territoriale 2025</span>
-            <span class="wf-aw-sub">Lauréat · Salon des Maires et des Collectivités Locales</span>
-          </figcaption>
-        </figure>
+  <div class="wf-aw-frame">
+    <div class="wf-aw-band">
+      <div class="wf-aw-marquee">
+        <div class="wf-aw-track">
+        <div class="wf-aw-seq">
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-lepine" role="img" aria-label="Concours Lépine"></div>
+            <figcaption>
+              <span class="wf-aw-title">Concours Lépine</span>
+              <span class="wf-aw-sub">Médaille d'Or</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-geneve" role="img" aria-label="Inventions Geneva"></div>
+            <figcaption>
+              <span class="wf-aw-title">Inventions Geneva</span>
+              <span class="wf-aw-sub">Salon International des Inventions de Genève</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-bruxelles" role="img" aria-label="Concours Mondial de Bruxelles"></div>
+            <figcaption>
+              <span class="wf-aw-title">Concours Mondial de Bruxelles</span>
+              <span class="wf-aw-sub">International Competition</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item wf-aw-item--wide">
+            <div class="wf-aw-logo wf-lg-trophee" role="img" aria-label="Prix de l'Innovation Territoriale"></div>
+            <figcaption>
+              <span class="wf-aw-title">Prix de l'Innovation Territoriale</span>
+              <span class="wf-aw-sub">Lauréat 2025 · Salon des Maires</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="wf-aw-seq" aria-hidden="true">
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-lepine" role="img" aria-label="Concours Lépine"></div>
+            <figcaption>
+              <span class="wf-aw-title">Concours Lépine</span>
+              <span class="wf-aw-sub">Médaille d'Or</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-geneve" role="img" aria-label="Inventions Geneva"></div>
+            <figcaption>
+              <span class="wf-aw-title">Inventions Geneva</span>
+              <span class="wf-aw-sub">Salon International des Inventions de Genève</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-bruxelles" role="img" aria-label="Concours Mondial de Bruxelles"></div>
+            <figcaption>
+              <span class="wf-aw-title">Concours Mondial de Bruxelles</span>
+              <span class="wf-aw-sub">International Competition</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item wf-aw-item--wide">
+            <div class="wf-aw-logo wf-lg-trophee" role="img" aria-label="Prix de l'Innovation Territoriale"></div>
+            <figcaption>
+              <span class="wf-aw-title">Prix de l'Innovation Territoriale</span>
+              <span class="wf-aw-sub">Lauréat 2025 · Salon des Maires</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="wf-aw-seq" aria-hidden="true">
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-lepine" role="img" aria-label="Concours Lépine"></div>
+            <figcaption>
+              <span class="wf-aw-title">Concours Lépine</span>
+              <span class="wf-aw-sub">Médaille d'Or</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-geneve" role="img" aria-label="Inventions Geneva"></div>
+            <figcaption>
+              <span class="wf-aw-title">Inventions Geneva</span>
+              <span class="wf-aw-sub">Salon International des Inventions de Genève</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-bruxelles" role="img" aria-label="Concours Mondial de Bruxelles"></div>
+            <figcaption>
+              <span class="wf-aw-title">Concours Mondial de Bruxelles</span>
+              <span class="wf-aw-sub">International Competition</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item wf-aw-item--wide">
+            <div class="wf-aw-logo wf-lg-trophee" role="img" aria-label="Prix de l'Innovation Territoriale"></div>
+            <figcaption>
+              <span class="wf-aw-title">Prix de l'Innovation Territoriale</span>
+              <span class="wf-aw-sub">Lauréat 2025 · Salon des Maires</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="wf-aw-seq" aria-hidden="true">
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-lepine" role="img" aria-label="Concours Lépine"></div>
+            <figcaption>
+              <span class="wf-aw-title">Concours Lépine</span>
+              <span class="wf-aw-sub">Médaille d'Or</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-geneve" role="img" aria-label="Inventions Geneva"></div>
+            <figcaption>
+              <span class="wf-aw-title">Inventions Geneva</span>
+              <span class="wf-aw-sub">Salon International des Inventions de Genève</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item">
+            <div class="wf-aw-logo wf-lg-bruxelles" role="img" aria-label="Concours Mondial de Bruxelles"></div>
+            <figcaption>
+              <span class="wf-aw-title">Concours Mondial de Bruxelles</span>
+              <span class="wf-aw-sub">International Competition</span>
+            </figcaption>
+          </figure>
+          <figure class="wf-aw-item wf-aw-item--wide">
+            <div class="wf-aw-logo wf-lg-trophee" role="img" aria-label="Prix de l'Innovation Territoriale"></div>
+            <figcaption>
+              <span class="wf-aw-title">Prix de l'Innovation Territoriale</span>
+              <span class="wf-aw-sub">Lauréat 2025 · Salon des Maires</span>
+            </figcaption>
+          </figure>
+        </div>
+        </div>
       </div>
     </div>
   </div>
