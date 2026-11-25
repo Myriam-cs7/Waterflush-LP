@@ -84,16 +84,16 @@
 
 /* ---------- Le filet : un seul bandeau continu ---------- */
 .wf-aw-frame{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 clamp(1rem,3vw,1.5rem);
+  width:100%;
+  margin:0;
+  padding:0;
 }
 .wf-aw-band{
   position:relative;
-  border:1px solid var(--wf-border);
-  border-radius:20px;
+  border-top:1px solid var(--wf-border);
+  border-bottom:1px solid var(--wf-border);
+  border-radius:0;
   background:#FFFFFF;
-  box-shadow:0 1px 2px rgba(21,58,91,.03), 0 14px 34px -22px rgba(21,58,91,.30);
   overflow:hidden;
 }
 .wf-aw-marquee{
@@ -170,8 +170,6 @@
 }
 
 @media (max-width:640px){
-  .wf-aw-frame{ padding:0 1rem; }
-  .wf-aw-band{ border-radius:16px; }
   .wf-aw-item{ width:176px; padding:0 1rem; }
   .wf-aw-logo{ height:68px; }
   .wf-aw-item--wide .wf-aw-logo{ height:82px; }
